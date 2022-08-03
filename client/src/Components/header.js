@@ -1,6 +1,17 @@
 import { AppBar, Box, Toolbar, styled, Typography, InputBase, Badge, Avatar,IconButton} from "@mui/material";
-import { Mail, Notifications, Menu } from '@mui/icons-material'
+import { Mail, Notifications, Menu, LocalShipping } from '@mui/icons-material'
 import React from "react";
+
+const TopBar = styled('div')(({ theme }) => ({
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    background: 'black',
+    height: '50px',
+    [theme.breakpoints.up('sm')]:{
+      display: 'flex'
+    }
+ }))
 
 const StyledToolbar = styled(Toolbar)({
     display: 'flex',
@@ -37,9 +48,14 @@ const Navbar = () => {
 
     return (
         <AppBar position='sticky' style={{ background: 'red'}}>
-                <Box>
-
-                </Box>
+                <TopBar>
+                    <Icons>
+                        <LocalShipping />
+                        <Typography>
+                            Free Shipping
+                        </Typography>
+                    </Icons>
+                </TopBar>
                 <StyledToolbar>
                         <Box sx={{display:'flex'}}>
                         <IconButton
