@@ -1,20 +1,56 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
+
+  type Cart {
+    _id: ID!
+    username: String
+    items [
+      productId: String
+      quantity: Number
+      price: Number
+    ]
+    bill: Number
+  }
+
+  type Order {
+    _id: ID!
+    username: String
+    items [
+      productId: String
+      quantity: Number
+      price: Number
+    ]
+    bill: Number
+    date_added: Date
+  }
+
   type User {
     _id: ID
     username: String
     email: String
     password: String
   }
-
-  type Product {
+  
+   type Product {
     _id: ID!
     name: String
     imageUrl: String
     description: String
     price: Int
   }
+
+
+  type Query {
+    cart(username: String): [Cart]
+    orders(username: String): [Order]
+  }
+
+  type Mutation {
+   createOrder
+   addToCart
+   
+
 
   type Query {
     products: [Product]
@@ -26,6 +62,7 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addProduct(name: String!, imageUrl: String, description: String!, price:Int): Product
     
+
   }
   
 `;
