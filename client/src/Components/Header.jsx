@@ -90,7 +90,7 @@ const Navbar = () => {
         <Search>
           <InputBase placeholder="Search Products" />
         </Search>
-        <Box sx={{ display: 'flex', justifyContent: 'space-between'}}>
+        <Box sx={{ display: 'flex', justifyContent: 'space-between', width: '25%'}}>
         <Icons>
           <Badge badgeContent={1}>
             <ShoppingCart />
