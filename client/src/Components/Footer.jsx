@@ -9,7 +9,7 @@ import pinterest from '../images/pinterest.png';
 const Footer = () => {
   return (
     <footer>
-      <Box bgcolor='black' px={{ xs: 3, sm: 10}} py={{ xs: 5, sm: 10}} color='white'>
+      <Box bgcolor='black' px={{ xs: 3, sm: 5}} py={{ xs: 5, sm: 5}} color='white'>
         <Container >
           <Grid container spacing={5}>
             <Grid item xs={12} sm={4}>
@@ -49,10 +49,10 @@ const Footer = () => {
               </Box>
             </Grid>
           </Grid>
-          <Box textAlign='center' pt={{xs: 5, sm: 10}} pb={{ xs: 5, s: 0}}>
+          <Box textAlign='center' pt={{xs: 5, sm: 5}} pb={{ xs: 5, s: 0}}>
             E-Commerce Site &reg; {new Date().getFullYear()}
           </Box>
-          <Box textAlign='center' display={'flex'} justifyContent={'space-evenly'} pt={{xs: 5, sm: 10}} pb={{ xs: 5, s: 0}}>
+          <Box textAlign='center' display={'flex'} justifyContent={'space-evenly'} pt={{xs: 5, sm: 5}} pb={{ xs: 5, s: 0}}>
             <img src={fb} alt="facebook" />
             <img src={insta} alt="instagram" />
             <img src={twitter} alt="twitter" />

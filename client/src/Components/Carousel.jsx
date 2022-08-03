@@ -45,7 +45,8 @@ const Carousel = () => {
             direction="column"
             alignItems="center"
             justifyContent="center"
-            marginBottom={20}
+            marginTop={10}
+            marginBottom={10}
         >
         <ImageList
           variant="quilted"
