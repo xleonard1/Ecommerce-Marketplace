@@ -45,6 +45,9 @@ const Footer = () => {
               </Box>
             </Grid>
           </Grid>
+          <Box textAlign='center' pt={{xs: 5, sm: 10}} pb={{ xs: 5, s: 0}}>
+            E-Commerce Site &reg; {new Date().getFullYear()}
+          </Box>
         </Container>
       </Box>
     </footer>
