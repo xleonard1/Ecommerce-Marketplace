@@ -1,5 +1,9 @@
 import * as React from 'react';
 import {ImageList, ImageListItem, Grid} from '@mui/material';
+import sales from '../images/sales.jpeg';
+import outfit from '../images/outfit.jpg';
+import shoes from '../images/shoes.jpg';
+import sunglasses from '../images/sunglasses.jpg';
 
 
 function srcset(image, size, rows = 1, cols = 1) {
@@ -13,22 +17,22 @@ function srcset(image, size, rows = 1, cols = 1) {
 
 const itemData = [
     {
-      img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-      title: 'Breakfast',
+      img: sales,
+      title: 'Special Offer 50% Off Big Sale Today',
       rows: 2,
       cols: 2,
     },
     {
-      img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
-      title: 'Burger',
+      img: outfit,
+      title: 'Watch, pair of pants, shoes, and t-shirt',
     },
     {
-      img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
-      title: 'Camera',
+      img: shoes,
+      title: 'Nike sneakers',
     },
     {
-      img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
-      title: 'Coffee',
+      img: sunglasses,
+      title: 'Sunglasses over a shirt and jeans with a cellphone',
       cols: 2
     },
   ];
@@ -41,14 +45,12 @@ const Carousel = () => {
             direction="column"
             alignItems="center"
             justifyContent="center"
-            // style={{ maxWidth: 1500 }}
         >
         <ImageList
-        //   sx={{ width: 500, height: 450 }}
           variant="quilted"
           cols={4}
           rows={2}
-          rowHeight={121}
+          rowHeight={189}
         >
           {itemData.map((item) => (
             <ImageListItem key={item.img} cols={item.cols || 1} rows={item.rows || 1}>
