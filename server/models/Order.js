@@ -26,6 +26,6 @@ date_added: {
 }
 });
 
-const Order = model('Order', matchupSchema);
+const Order = model('Order', orderSchema);
 
 module.exports = Order;
