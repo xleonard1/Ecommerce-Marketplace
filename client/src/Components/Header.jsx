@@ -37,6 +37,7 @@ const StyledToolbar = styled(Toolbar)({
 const Search = styled("div")(({ theme }) => ({
   backgroundColor: "white",
   padding: "0 10px",
+  borderColor: 'black',
   borderRadius: theme.shape.borderRadius,
   width: "30%",
 }));
@@ -54,7 +55,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <AppBar position="sticky" style={{ background: "red" }}>
+    <AppBar position="sticky" style={{ background: "white" }}>
       <TopBar>
         <Badge>
           <LocalShipping style={{ marginRight: "8px" }} />
@@ -78,17 +79,17 @@ const Navbar = () => {
             aria-label="open drawer"
             sx={{ mr: 2 }}
           >
-            <Menu />
+            <Menu sx={{color: 'black'}}/>
           </IconButton>
           <Typography
             variant="h6"
-            sx={{ display: { xs: "none", sm: "block", alignSelf: "center" } }}
+            sx={{ display: { xs: "none", sm: "block", alignSelf: "center", color: 'black' } }}
           >
             E-COMMERCE MARKETPLACE
           </Typography>
         </Box>
         <Search>
-          <InputBase placeholder="Search Products" />
+          <InputBase placeholder="Search Products"/>
         </Search>
         <Box sx={{ display: 'flex', justifyContent: 'space-between', width: '25%'}}>
         <Icons>
@@ -110,11 +111,12 @@ const Navbar = () => {
             vertical: "top",
             horizontal: "right",
           }}
+          sx={{color: 'black'}}
         >
           <Typography>Brands</Typography>
         </Button>
-        <Button><Typography>Shop</Typography></Button>
-        <Button><Typography>Welcome</Typography></Button>
+        <Button sx={{color: 'black'}}><Typography>Shop</Typography></Button>
+        <Button sx={{color: 'black'}}><Typography>Welcome</Typography></Button>
         </Box>
       </StyledToolbar>
     </AppBar>
