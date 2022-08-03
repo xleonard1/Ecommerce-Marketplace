@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {ImageList, ImageListItem, Grid} from '@mui/material';
+import {ImageList, ImageListItem, Grid, Divider} from '@mui/material';
 import sales from '../images/sales.jpeg';
 import outfit from '../images/outfit.jpg';
 import shoes from '../images/shoes.jpg';
@@ -45,6 +45,7 @@ const Carousel = () => {
             direction="column"
             alignItems="center"
             justifyContent="center"
+            marginBottom={20}
         >
         <ImageList
           variant="quilted"
