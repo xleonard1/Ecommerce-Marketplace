@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 
-const cartSchema = new Schema({
+const orderSchema = new Schema({
   userId: {
     type: String,
 },
@@ -12,18 +12,21 @@ items: [{
     quantity: {
         type: Number,
         required: true,
-        min: [1, 'Quantity can not be less then 1.'],
-        default: 1
+        min: [1, 'Quantity can not be less then 1.']
     },
     price: Number
 }],
 bill: {
     type: Number,
-    required: true,
-    default: 0
+    required: true
+},
+date_added: {
+    type: Date,
+    default: Date.now
 }
 });
 
-const Matchup = model('Matchup', matchupSchema);
+const Order = model('Order', orderSchema);
 
-module.exports = Matchup;
+module.exports = Order
+
