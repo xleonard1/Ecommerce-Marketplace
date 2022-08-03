@@ -1,10 +1,10 @@
-import { AppBar, Toolbar, styled, Typography, InputBase, Badge, Avatar, Menu, MenuItem} from "@mui/material";
-import { Pets, Mail, Notifications } from '@mui/icons-material'
-import React, { useState } from "react";
+import { AppBar, Box, Toolbar, styled, Typography, InputBase, Badge, Avatar,IconButton} from "@mui/material";
+import { Mail, Notifications, Menu } from '@mui/icons-material'
+import React from "react";
 
 const StyledToolbar = styled(Toolbar)({
     display: 'flex',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
 })
 
 const Search = styled('div')(({ theme }) => ({
@@ -29,23 +29,36 @@ const UserBox = styled('div')(({ theme }) => ({
     alignItems: 'center',
     [theme.breakpoints.up('sm')]:{
         display: 'none'
-    }
+    },
  }))
 
 const Navbar = () => {
-    const[open, setOpen] = useState(false);
+    // const[open, setOpen] = useState(false); 
 
     return (
-        <AppBar position='sticky'>
-            <StyledToolbar>
-                <Typography 
-                    variant="h6" 
-                    sx={{ display: {xs: 'none', sm: 'block'}}}
-                >
-                    LAMA DEV
-                </Typography>
-                <Pets sx={{ display: {xs: 'block', sm: 'none'}}}/>
-                <Search><InputBase placeholder="search..."/></Search>
+        <AppBar position='sticky' style={{ background: 'red'}}>
+                <Box>
+
+                </Box>
+                <StyledToolbar>
+                        <Box sx={{display:'flex'}}>
+                        <IconButton
+                        size="large"
+                        edge="start"
+                        color="inherit"
+                        aria-label="open drawer"
+                        sx={{ mr: 2 }}
+                        >
+                        <Menu />
+                        </IconButton>
+                        <Typography 
+                            variant="h6" 
+                            sx={{ display: {xs: 'none', sm: 'block', alignSelf: 'center'}}}
+                        >
+                            E-COMMERCE MARKETPLACE
+                        </Typography>
+                        </Box>
+                <Search><InputBase placeholder="Search Products"/></Search>
                 <Icons>
                     <Badge badgeContent={4} color="error">
                         <Mail />
@@ -56,19 +69,19 @@ const Navbar = () => {
                     <Avatar 
                         sx={{width: 30, height: 30}}
                         // src={spencer} 
-                        onClick={(e) => setOpen(true)}
+                        // onClick={(e) => setOpen(true)}
                     />
                 </Icons>
                 <UserBox>
                     <Avatar 
                         sx={{width: 30, height: 30}}
                         // src={spencer} 
-                        onClick={(e) => setOpen(true)}
+                        // onClick={(e) => setOpen(true)}
                     />
                     <Typography variant='span'>Spencer</Typography>
                 </UserBox>
             </StyledToolbar>
-            <Menu
+            {/* <Box
                 id="demo-positioned-menu"
                 aria-labelledby="demo-positioned-button"
                 open={open}
@@ -85,7 +98,7 @@ const Navbar = () => {
                 <MenuItem >Profile</MenuItem>
                 <MenuItem >My account</MenuItem>
                 <MenuItem >Logout</MenuItem>
-            </Menu>
+            </Box> */}
         </AppBar>
     )
 };
