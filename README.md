@@ -1,11 +1,13 @@
-# Ecommerce-Marketplace
 
-Ecommerce marketplace that allows users to buy and sell items to their peers. 
+# Ecommerce-Marketplace ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+
+An ecommerce marketplace that allows users to buy and sell items to their peers.
 
 
 # Description
 
-A functional and highly immersive application allowing users to buy and sell products online.  A user can create an account and purchase items for sale by other sellers, in addition to creating product listings to sell items to other users of the site.  A product page template is provided to sellers to input item information, and once that is collected, each item will display in the seller's dashboard. 
+A functional and highly immersive application allowing users to buy and sell products online.  A user can create an account and purchase items for sale by other sellers, in addition to creating product listings to sell items to other users of the site.  A product page template is provided to sellers to input item information, and each item currently will display in the seller's dashboard. 
+
 
 
 ## Table of Contents
@@ -21,7 +23,8 @@ A functional and highly immersive application allowing users to buy and sell pro
 
 [GitHub Repository](https://github.com/xleonard1/Ecommerce-Marketplace)
 
-[Deployed Application](https://example.com/image.jpc)
+[Deployed Application](https://example.com)
+
 
 
 # Screenshots
@@ -34,9 +37,10 @@ A functional and highly immersive application allowing users to buy and sell pro
 
 # User Story
 
-- AS AN employer looking for candidates with experience building single-page applications
-- I WANT to view a potential employee's deployed React portfolio of work samples
-- SO THAT I can assess whether they're a good candidate for an open position
+- As a consumer looking for an easy to use site to purchase goods, or a seller looking for a easy to use marketplace to sell goods
+- I WANT to be able to purchase items and sell items on the marketplace
+- SO THAT I can access the best goods as a consumer, and a large pool of consumers as a seller. 
+
 
 
 # Acceptance Criteria
