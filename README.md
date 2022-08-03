@@ -1,3 +1,4 @@
+
 # Ecommerce-Marketplace ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 An ecommerce marketplace that allows users to buy and sell items to their peers.
@@ -6,6 +7,7 @@ An ecommerce marketplace that allows users to buy and sell items to their peers.
 # Description
 
 A functional and highly immersive application allowing users to buy and sell products online.  A user can create an account and purchase items for sale by other sellers, in addition to creating product listings to sell items to other users of the site.  A product page template is provided to sellers to input item information, and each item currently will display in the seller's dashboard. 
+
 
 
 ## Table of Contents
@@ -24,6 +26,7 @@ A functional and highly immersive application allowing users to buy and sell pro
 [Deployed Application](https://example.com)
 
 
+
 # Screenshots
 
 ![Screenshot of Ecommerce Marketplace:](./public/images/EcommerceMarketplace1.jpg)
@@ -37,6 +40,7 @@ A functional and highly immersive application allowing users to buy and sell pro
 - As a consumer looking for an easy to use site to purchase goods, or a seller looking for a easy to use marketplace to sell goods
 - I WANT to be able to purchase items and sell items on the marketplace
 - SO THAT I can access the best goods as a consumer, and a large pool of consumers as a seller. 
+
 
 
 # Acceptance Criteria
