@@ -1,10 +1,10 @@
 import { AppBar, Box, Toolbar, styled, Typography, InputBase, Badge, Avatar,IconButton} from "@mui/material";
-import { Mail, Notifications, Menu, LocalShipping } from '@mui/icons-material'
+import { ShoppingCart, Menu, LocalShipping, CreditCard, LocalPhone } from '@mui/icons-material'
 import React from "react";
 
 const TopBar = styled('div')(({ theme }) => ({
     display: 'flex',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
     alignItems: 'center',
     background: 'black',
     height: '50px',
@@ -49,12 +49,24 @@ const Navbar = () => {
     return (
         <AppBar position='sticky' style={{ background: 'red'}}>
                 <TopBar>
-                    <Icons>
-                        <LocalShipping />
-                        <Typography>
-                            Free Shipping
-                        </Typography>
-                    </Icons>
+                        <Badge>
+                            <LocalShipping style={{ marginRight: '8px'}}/>
+                            <Typography>
+                                Free Shipping
+                            </Typography>
+                        </Badge>
+                        <Badge>
+                            <CreditCard style={{ marginRight: '8px'}}/>
+                            <Typography>
+                                Payment Methods
+                            </Typography>
+                        </Badge>
+                        <Badge>
+                            <LocalPhone style={{ marginRight: '8px'}}/>
+                            <Typography>
+                                222-222-2222
+                            </Typography>
+                        </Badge>
                 </TopBar>
                 <StyledToolbar>
                         <Box sx={{display:'flex'}}>
@@ -76,17 +88,9 @@ const Navbar = () => {
                         </Box>
                 <Search><InputBase placeholder="Search Products"/></Search>
                 <Icons>
-                    <Badge badgeContent={4} color="error">
-                        <Mail />
+                    <Badge badgeContent={1}>
+                        <ShoppingCart />
                     </Badge>
-                    <Badge badgeContent={2} color="error">
-                        <Notifications />
-                    </Badge>
-                    <Avatar 
-                        sx={{width: 30, height: 30}}
-                        // src={spencer} 
-                        // onClick={(e) => setOpen(true)}
-                    />
                 </Icons>
                 <UserBox>
                     <Avatar 
