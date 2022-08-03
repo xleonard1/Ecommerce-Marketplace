@@ -50,7 +50,7 @@ const Carousel = () => {
           variant="quilted"
           cols={4}
           rows={2}
-          rowHeight={189}
+          rowHeight={200}
         >
           {itemData.map((item) => (
             <ImageListItem key={item.img} cols={item.cols || 1} rows={item.rows || 1}>
