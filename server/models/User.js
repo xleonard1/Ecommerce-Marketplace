@@ -42,5 +42,5 @@ UserSchema.methods.isCorrectPassword = async function(password) {
 
 
 
-module.exports = Mongoose.model('User', UserSchema);
+module.exports = mongoose.model('User', UserSchema);
 
