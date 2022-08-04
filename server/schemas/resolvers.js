@@ -1,6 +1,11 @@
-const { Tech, Matchup } = require('../models');
+const {User, Product, Category, Order } = require('../models');
+
 const { signToken } = require('../utils/auth');
 const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
+
+
+
+
 
 
 const resolvers = {
@@ -12,12 +17,14 @@ const resolvers = {
       return await Product.find(username).populate('products');
      },
     cart: async (parent, {username }) => {
-      return await Cart.find(username).populate('cart');
+
+      return await Cart.findOne({username}).populate('cart');
      
      },
      orders: async (parent, {username }) => {
       return await Order.find(username).populate('orders');
      },
+
      
      checkout: async (parent, args, context) => {
       const url = new URL(context.headers.referer).origin;
@@ -55,6 +62,19 @@ const resolvers = {
 
       return { session: session.id };
     }
+
+     user: async (parent, args, context) => {
+       if (context.user) {
+         const user = await User.findById(context.user._id).populate({
+           path: 'orders.products',
+           populate: 'category'
+         });
+
+         user.orders.sort((a,b) => b.purchaseDate - a.purchaseDate)
+       }
+     }
+     
+
   },
 
   Mutation: {
