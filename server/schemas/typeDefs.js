@@ -40,27 +40,21 @@ const typeDefs = gql`
     price: Int
   }
 
-
-  type Query {
-    cart(username: String): [Cart]
-    orders(username: String): [Order]
-  }
-
-  type Mutation {
-   createOrder
-   addToCart
-   
-
+  
 
   type Query {
     products: [Product]
-    product(name: String!): Product    
+    product(name: String!): Product   
+    cart(username: String): [Cart]
+    orders(username: String): [Order] 
   }
 
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     addProduct(name: String!, imageUrl: String, description: String!, price:Int): Product
+    add
+    addToCart(username: String!, items[])
     
 
   }
