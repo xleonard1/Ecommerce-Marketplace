@@ -27,7 +27,9 @@ const typeDefs = gql`
     username: String
     email: String
     password: String
+
     orders:[Orders]
+
   }
   
    type Product {
