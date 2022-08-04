@@ -61,7 +61,7 @@ const resolvers = {
       });
 
       return { session: session.id };
-    }
+    },
 
      user: async (parent, args, context) => {
        if (context.user) {
