@@ -2,14 +2,22 @@ const { Tech, Matchup } = require('../models');
 
 const resolvers = {
   Query: {
-    tech: async () => {
-      return Tech.find({});
+    products: async () => {
+      return Product.find({});
     },
-    matchups: async (parent, { _id }) => {
-      const params = _id ? { _id } : {};
-      return Matchup.find(params);
-    },
+    product: async (parent, {name }) => {
+      return await Product.find(username).populate('products');
+     },
+    cart: async (parent, {username }) => {
+      return await Cart.find(username).populate('cart');
+     
+     },
+     orders: async (parent, {username }) => {
+      return await Order.find(username).populate('orders');
+     },
+     
   },
+
   Mutation: {
     createMatchup: async (parent, args) => {
       const matchup = await Matchup.create(args);
