@@ -4,9 +4,9 @@ const typeDefs = gql`
 
   type Cart {
     _id: ID!
-    username: String
     items [
       productId: String
+      name: String
       quantity: Number
       price: Number
     ]
@@ -15,7 +15,6 @@ const typeDefs = gql`
 
   type Order {
     _id: ID!
-    username: String
     items [
       productId: String
       quantity: Number
@@ -45,8 +44,8 @@ const typeDefs = gql`
   type Query {
     products: [Product]
     product(name: String!): Product   
-    cart(username: String): [Cart]
-    orders(username: String): [Order] 
+    cart(id: ID!): [Cart]
+    orders(id: ID!): [Order] 
   }
 
   type Mutation {
@@ -54,9 +53,7 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addProduct(name: String!, imageUrl: String, description: String!, price:Int): Product
     add
-    addToCart(username: String!, items[])
-    
-
+    updateCart(id:ID!): Cart
   }
   
 `;
