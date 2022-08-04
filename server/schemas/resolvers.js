@@ -1,4 +1,4 @@
-const { Tech, Matchup } = require('../models');
+const { Tech, Matchup, User } = require('../models');
 
 const resolvers = {
   Query: {
@@ -9,12 +9,19 @@ const resolvers = {
       return await Product.find(username).populate('products');
      },
     cart: async (parent, {username }) => {
-      return await Cart.find(username).populate('cart');
+      return await Cart.findOne({username}).populate('cart');
      
      },
      orders: async (parent, {username }) => {
       return await Order.find(username).populate('orders');
      },
+     user: async (parent, args, context) => {
+       if (context.user) {
+         const user = await User.findById(context.user._id).populate({
+           path: 'orders.products'
+         })
+       }
+     }
      
   },
 
