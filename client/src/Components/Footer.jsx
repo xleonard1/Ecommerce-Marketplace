@@ -49,10 +49,10 @@ const Footer = () => {
               </Box>
             </Grid>
           </Grid>
-          <Box textAlign='center' pt={{xs: 5, sm: 5}} pb={{ xs: 5, s: 0}}>
+          <Box textAlign='center' pt={{xs: 2, sm: 2}} pb={{ xs: 2, s: 0}}>
             E-Commerce Site &reg; {new Date().getFullYear()}
           </Box>
-          <Box textAlign='center' display={'flex'} justifyContent={'space-evenly'} pt={{xs: 5, sm: 5}} pb={{ xs: 5, s: 0}}>
+          <Box textAlign='center' display={'flex'} justifyContent={'space-evenly'} pt={{xs: 2, sm: 2}} pb={{ xs: 2, s: 0}}>
             <img src={fb} alt="facebook" />
             <img src={insta} alt="instagram" />
             <img src={twitter} alt="twitter" />
