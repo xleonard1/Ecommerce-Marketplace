@@ -1,5 +1,6 @@
 import * as React from "react";
-import { Box, Card, Slider, styled, Typography } from "@mui/material";
+import { Slider, styled, Typography } from "@mui/material";
+import { Box } from "@mui/system";
 
 const PriceCard = styled("div")(({ theme }) => ({
   position: "absolute",
@@ -31,25 +32,17 @@ const PriceHeader = styled("div")(({ theme }) => ({
 
 const marks = [
   {
-    value: 0,
-    label: "0°C",
-  },
-  {
-    value: 20,
-    label: "20°C",
-  },
-  {
-    value: 37,
-    label: "37°C",
+    value: 1,
+    label: "$1",
   },
   {
     value: 100,
-    label: "100°C",
+    label: "$100",
   },
 ];
 
 function valuetext(value) {
-  return `${value}°C`;
+  return `$${value}`;
 }
 
 const Price = () => {
@@ -60,16 +53,17 @@ const Price = () => {
           Price
         </Typography>
       </PriceHeader>
-     
+        <Box fontWeight={'bold'} marginTop={2}>
         <Slider
           aria-label="Custom marks"
-          defaultValue={20}
+          defaultValue={1}
           getAriaValueText={valuetext}
-          step={10}
+          step={1}
           valueLabelDisplay="auto"
           marks={marks}
-          sx={{ width: 200, width: '90%' }}
+          sx={{ width: '80%' }}
         />
+        </Box>
 
     </PriceCard>
   );
