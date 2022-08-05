@@ -4,16 +4,12 @@ const { signToken } = require('../utils/auth');
 const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
 
-
-
-
-
 const resolvers = {
   Query: {
     products: async () => {
       return Product.find({});
     },
-    product: async (parent, {name }) => {
+    product: async (parent, {username }) => {
       return await Product.find(username).populate('products');
      },
     cart: async (parent, {username }) => {
@@ -61,7 +57,7 @@ const resolvers = {
       });
 
       return { session: session.id };
-    }
+    },
 
      user: async (parent, args, context) => {
        if (context.user) {
