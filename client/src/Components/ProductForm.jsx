@@ -10,22 +10,10 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-function Copyright(props) {
-    return (
-      <Typography variant="body2" color="text.secondary" align="center" {...props}>
-        {'Copyright © '}
-        <Link color="inherit" href="https://mui.com/">
-          Your Website
-        </Link>{' '}
-        {new Date().getFullYear()}
-        {'.'}
-      </Typography>
-    );
-}
 
 const theme = createTheme();
 
-export default function addProduct() {
+export function addProduct() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -36,6 +24,8 @@ export default function addProduct() {
       category: data.get('category'),
     });
   };
+
+};
 
 const productForm = () => {
 return (
@@ -51,9 +41,7 @@ return (
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-            <LockOutlinedIcon />
-          </Avatar>
+          
         <Row>
             <Typography component="h1" variant="h5">
             Add A Product To Sell
@@ -110,7 +98,6 @@ return (
           </Box>
           </Row>
         </Box>
-        <Copyright sx={{ mt: 8, mb: 4 }} />
     </Container>
 </ThemeProvider>
 
