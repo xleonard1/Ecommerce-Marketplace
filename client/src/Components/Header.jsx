@@ -2,6 +2,10 @@ import {
   AppBar,
   Box,
   Button,
+  Drawer,
+  List,
+  Divider,
+  ListItem,
   Toolbar,
   styled,
   Typography,
@@ -18,6 +22,7 @@ import {
 } from "@mui/icons-material";
 import React, { useState } from "react";
 
+//Custom Styling on bar with phone numbers
 const TopBar = styled("div")(({ theme }) => ({
   display: "flex",
   justifyContent: "space-around",
@@ -29,11 +34,13 @@ const TopBar = styled("div")(({ theme }) => ({
   },
 }));
 
+//Custom styling on bar
 const StyledToolbar = styled(Toolbar)({
   display: "flex",
   justifyContent: "space-between",
 });
 
+//Custom syling on Searchbar
 const Search = styled("div")(({ theme }) => ({
   backgroundColor: "white",
   padding: "0 10px",
@@ -42,6 +49,7 @@ const Search = styled("div")(({ theme }) => ({
   width: "30%",
 }));
 
+//Custom on menu buttons
 const Icons = styled("div")(({ theme }) => ({
   display: "none",
   gap: "20px",
@@ -51,8 +59,39 @@ const Icons = styled("div")(({ theme }) => ({
   },
 }));
 
+
+//Code for NavBar
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [state, setState] = React.useState({
+    top: false,
+  });
+
+  const toggleDrawer = (anchor, open) => (event) => {
+    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+      return;
+    }
+
+    setState({ ...state, [anchor]: open });
+  };
+
+  const list = (anchor) => (
+    <Box
+      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
+      role="presentation"
+      onClick={toggleDrawer(anchor, false)}
+      onKeyDown={toggleDrawer(anchor, false)}
+    >
+      <List>
+        <Typography variant="h4">Shop By Category</Typography>
+        <Typography variant="overline">Shoes</Typography>
+        <Typography variant="overline">Bags</Typography>
+        <Typography variant="overline">Clothes</Typography>
+        <Typography variant="overline">Electronics</Typography>
+      </List>
+    </Box>
+  );
+
 
   return (
     <AppBar position="sticky" style={{ background: "white" }}>
