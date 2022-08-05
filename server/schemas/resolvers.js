@@ -25,12 +25,20 @@ const resolvers = {
     product: async (parent, {username }) => {
       return await Product.find(username).populate('products');
      },
-     
-    cart: async (parent, {username }) => {
 
-      return await Cart.findOne({username}).populate('cart');
-     
-     },
+     cart: async (parent, { _id }, context) => {
+      if (context.user) {
+        const user = await User.findById(context.user._id).populate({
+          path: 'carts.products',
+          populate: 'category'
+        });
+
+        return user.orders.id(_id);
+      }
+
+      throw new AuthenticationError('Not logged in');
+    },
+    
      orders: async (parent, {username }) => {
       return await Order.find(username).populate('orders');
      },
