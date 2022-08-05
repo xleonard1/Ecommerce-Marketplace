@@ -37,28 +37,28 @@ const marks = [
   },
   {
     value: 1,
-    label: "1",
+    label: "1★",
   },
   {
     value: 2,
-    label: "2",
+    label: "2★",
   },
   {
     value: 3,
-    label: "3",
+    label: "3★",
   },
   {
     value: 4,
-    label: "4",
+    label: "4★",
   },
   {
     value: 5,
-    label: "5",
+    label: "5★",
   },
 ];
 
 function valuetext(value) {
-  return `${value}`;
+  return `${value}★`;
 }
 
 function valueLabelFormat(value) {
@@ -76,14 +76,14 @@ const Rating = () => {
         <Box fontWeight={'bold'} marginTop={2}>
         <Slider
           aria-label="Custom marks"
-          defaultValue={1}
+          defaultValue={0}
           getAriaValueText={valuetext}
           valueLabelFormat={valueLabelFormat}
           step={1}
           valueLabelDisplay="auto"
-          marks
+          marks={marks}
           min={0}
-          max={6}
+          max={5}
           sx={{ width: '80%' }}
         />
         </Box>
