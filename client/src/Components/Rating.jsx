@@ -61,6 +61,10 @@ function valuetext(value) {
   return `${value}`;
 }
 
+function valueLabelFormat(value) {
+    return marks.findIndex((mark) => mark.value === value) + 1;
+}
+
 const Rating = () => {
   return (
     <RatingCard>
@@ -74,9 +78,12 @@ const Rating = () => {
           aria-label="Custom marks"
           defaultValue={1}
           getAriaValueText={valuetext}
+          valueLabelFormat={valueLabelFormat}
           step={1}
           valueLabelDisplay="auto"
-          marks={marks}
+          marks
+          min={0}
+          max={6}
           sx={{ width: '80%' }}
         />
         </Box>
