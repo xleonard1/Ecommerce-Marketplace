@@ -1,4 +1,5 @@
 const {User, Product, Category, Order } = require('../models');
+const Cart = require('../models/Cart');
 
 const { signToken } = require('../utils/auth');
 const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
@@ -10,6 +11,10 @@ const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
 const resolvers = {
   Query: {
+    categories: async () => {
+      return await Category.find();
+    },
+
     products: async () => {
       return Product.find({});
     },
@@ -110,7 +115,13 @@ const resolvers = {
 
       return await Product.findByIdAndUpdate(_id, { $inc: { quantity: decrement } }, { new: true });
     },
-    
+    updateCart: async (parent, args, context) => {
+      const cart = new Cart({ args });
+
+      await Cart.findByIdAndUpdate(context.user._id, args, {new: true})
+
+    },
+
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 
