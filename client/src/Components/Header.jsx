@@ -60,9 +60,9 @@ const Icons = styled("div")(({ theme }) => ({
 
 //Code for NavBar
 const Navbar = () => {
-  const [open, setOpen] = useState(false);
+
   //state for menu drawer
-  const [state, setState] = React.useState({
+  const [state, setState] = useState({
     left: false,
   });
 
@@ -114,7 +114,6 @@ const Navbar = () => {
         <Box sx={{ display: "flex" }}>
           <div>
               <React.Fragment key={'left'}>
-                <Button onClick={toggleDrawer('left', true)}>
                 <IconButton
                   size="large"
                   edge="start"
@@ -124,8 +123,7 @@ const Navbar = () => {
                   onClick={toggleDrawer('left', true)}              
                 >
                   <Menu sx={{color: 'black'}}/>
-                </IconButton>
-                </Button>
+                </IconButton>         
                 <Drawer
                   anchor={'left'}
                   open={state['left']}
