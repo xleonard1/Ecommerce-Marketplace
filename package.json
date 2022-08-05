@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/xleonard1/Ecommerce-Marketplace/issues"
   },
-  "homepage": "https://github.com/xleonard1/Ecommerce-Marketplace#readme"
+  "homepage": "https://github.com/xleonard1/Ecommerce-Marketplace#readme",
+  "devDependencies": {
+    "bcrypt": "^5.0.1"
+  }
 }

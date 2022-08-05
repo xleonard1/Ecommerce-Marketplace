@@ -12,14 +12,14 @@ const typeDefs = gql`
   type Cart {
     _id: ID!
     products:[Product]
-    bill: Number
+    bill: Int
   }
 
   type Order {
     _id: ID!
     products:[Product]
-    bill: Number
-    date_added: Date
+    bill: Int
+    date_added: String
   }
 
   type User {
@@ -28,7 +28,7 @@ const typeDefs = gql`
     email: String
     password: String
 
-    orders:[Orders]
+    orders:[Order]
 
   }
   
@@ -38,7 +38,7 @@ const typeDefs = gql`
     imageUrl: String
     description: String
     quantity: Int
-    price: Int
+    price: Float
     category: Category
   }
 
