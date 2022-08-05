@@ -79,17 +79,17 @@ const Navbar = () => {
   //list on the menu drawer
   const list = (anchor) => (
     <Box
-      sx={{ width:  250 }}
+      sx={{ width:  250}}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List>
+      <List sx={{ width:  250, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
         <Typography variant="h6">Shop By Category</Typography>
-        <Typography variant="overline">Shoes</Typography>
-        <Typography variant="overline">Bags</Typography>
-        <Typography variant="overline">Clothes</Typography>
-        <Typography variant="overline">Electronics</Typography>
+        <Button>Shoes</Button>
+        <Button>Bags</Button>
+        <Button>Clothes</Button>
+        <Button>Electronics</Button>
       </List>
     </Box>
   );
