@@ -6,12 +6,26 @@ const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
 const resolvers = {
   Query: {
-    products: async () => {
-      return Product.find({});
+    products: async (parent, { category, name }) => {
+      const params = {};
+
+      if (category) {
+        params.category = category;
+      }
+
+      if (name) {
+        params.name = {
+          $regex: name
+        };
+      }
+
+      return await Product.find(params).populate('category');
     },
+
     product: async (parent, {username }) => {
       return await Product.find(username).populate('products');
      },
+     
     cart: async (parent, {username }) => {
 
       return await Cart.findOne({username}).populate('cart');
