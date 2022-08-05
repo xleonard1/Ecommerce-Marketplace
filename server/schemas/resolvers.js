@@ -38,7 +38,7 @@ const resolvers = {
 
       throw new AuthenticationError('Not logged in');
     },
-    
+
      orders: async (parent, {username }) => {
       return await Order.find(username).populate('orders');
      },
@@ -123,10 +123,9 @@ const resolvers = {
       throw new AuthenticationError('Not logged in');
     },
 
-    updateProduct: async (parent, { _id, quantity }) => {
-      const decrement = Math.abs(quantity) * -1;
-
-      return await Product.findByIdAndUpdate(_id, { $inc: { quantity: decrement } }, { new: true });
+    updateProduct: async (parent, { args}) => {
+            
+      return await Product.findByIdAndUpdate( args, { new: true });
     },
     
     login: async (parent, { email, password }) => {
