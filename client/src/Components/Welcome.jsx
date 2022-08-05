@@ -2,6 +2,7 @@ import * as React from 'react';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import { Typography } from '@mui/material';
 
 const Welcome = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -20,9 +21,10 @@ const Welcome = () => {
         aria-controls={open ? 'demo-positioned-menu' : undefined}
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
+        sx={{color: 'black'}}
         onClick={handleClick}
       >
-        Dashboard
+        <Typography>Welcome</Typography>
       </Button>
       <Menu
         id="demo-positioned-menu"
@@ -39,9 +41,8 @@ const Welcome = () => {
           horizontal: 'left',
         }}
       >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
+        <MenuItem onClick={handleClose}>Login</MenuItem>
+        <MenuItem onClick={handleClose}>Signup</MenuItem>
       </Menu>
     </div>
   );

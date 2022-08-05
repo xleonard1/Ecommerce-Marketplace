@@ -19,6 +19,7 @@ import {
   LocalPhone,
 } from "@mui/icons-material";
 import React, { useState } from "react";
+import Welcome from "./Welcome";
 
 //Custom Styling on bar with phone numbers
 const TopBar = styled("div")(({ theme }) => ({
@@ -166,7 +167,7 @@ const Navbar = () => {
           <Typography>Brands</Typography>
         </Button>
         <Button sx={{color: 'black'}}><Typography>Shop</Typography></Button>
-        <Button sx={{color: 'black'}}><Typography>Welcome</Typography></Button>
+        <Welcome />
         </Box>
       </StyledToolbar>
     </AppBar>
