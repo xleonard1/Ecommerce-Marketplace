@@ -63,10 +63,12 @@ const Icons = styled("div")(({ theme }) => ({
 //Code for NavBar
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  //state for menu drawer
   const [state, setState] = React.useState({
     top: false,
   });
 
+  //toggle function on menu button
   const toggleDrawer = (anchor, open) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
@@ -75,9 +77,10 @@ const Navbar = () => {
     setState({ ...state, [anchor]: open });
   };
 
+  //list on the menu drawer
   const list = (anchor) => (
     <Box
-      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
+      sx={{ width: anchor === 'menu' || anchor === 'bottom' ? 'auto' : 250 }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
@@ -111,7 +114,7 @@ const Navbar = () => {
       </TopBar>
       <StyledToolbar>
         <Box sx={{ display: "flex" }}>
-          <IconButton
+          {/* <IconButton
             size="large"
             edge="start"
             color="inherit"
@@ -119,7 +122,31 @@ const Navbar = () => {
             sx={{ mr: 2 }}
           >
             <Menu sx={{color: 'black'}}/>
-          </IconButton>
+          </IconButton> */}
+          <div>
+            {['menu'].map((anchor) => (
+              <React.Fragment key={anchor}>
+                <IconButton
+                  size="large"
+                  edge="start"
+                  color="inherit"
+                  aria-label="open drawer"
+                  sx={{ mr: 2 }}
+                  onClick={toggleDrawer(anchor, true)}              
+                >
+                  {anchor}<Menu sx={{color: 'black'}}/>
+                </IconButton>
+                <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
+                <Drawer
+                  anchor={anchor}
+                  open={state[anchor]}
+                  onClose={toggleDrawer(anchor, false)}
+                >
+                  {list(anchor)}
+                </Drawer>
+              </React.Fragment>
+            ))}
+          </div>
           <Typography
             variant="h6"
             sx={{ display: { xs: "none", sm: "block", alignSelf: "center", color: 'black' } }}
