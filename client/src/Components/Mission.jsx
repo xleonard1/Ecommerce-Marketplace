@@ -10,7 +10,6 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-
 function Copyright(props) {
     return (
       <Typography variant="body2" color="text.secondary" align="center" {...props}>
@@ -26,7 +25,7 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-const shipping = () => {
+const mission = () => {
     return (
         <ThemeProvider theme={theme}>
             <Container component="main" maxWidth="xs">
@@ -39,26 +38,26 @@ const shipping = () => {
                     alignItems: 'center',
                   }}
                 >
-                    <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-                        <LockOutlinedIcon />
-                    </Avatar>
-                    <Row>
-                        <Typography component="h1" variant="h5">
-                        Shipping Policy
-                        </Typography>
-                        <img src="/images/truck.PNG"></img>
-                    </Row>
-                    <Row>
-                        <img src="/images/fedexLogo.PNG"></img><img src="/images/uspsLogo.PNG"></img>
-                    </Row>
-                    <Row>
-                        <p> All items ship with USPS Priority Mail or FedEx 2-day air to ensure delivery to your location within 2 business days. Shipping costs are included in prices so there are no surprises! You will recieve a confirmation email with your shipping tracking information as soon as your item ships.</p> 
-                    </Row>
+                  <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+                    <LockOutlinedIcon />
+                  </Avatar>
+                <Row>
+                    <Typography component="h1" variant="h5">
+                    Our Mission
+                    </Typography>
+                </Row>
+                <Row>
+                    <p>
+                      Our mission is to create the best online marketplace, where shoppers and sellers are able to purchase truly world class, hard to find products from our network of reputable sellers.  Customer satisfaction is 100% guaranteed, so you can rest assured that if any issues arise during your shopping experience on Ecommerce Marketplace that it will be taken care of.  
+                    </p> 
+                </Row>
                 </Box>
                 <Copyright sx={{ mt: 8, mb: 4 }} />
+
             </Container>
         </ThemeProvider>
+
     )
 };
 
-export default shipping;
+export default mission;

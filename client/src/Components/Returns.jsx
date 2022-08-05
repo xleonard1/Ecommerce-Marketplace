@@ -10,7 +10,6 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-
 function Copyright(props) {
     return (
       <Typography variant="body2" color="text.secondary" align="center" {...props}>
@@ -26,7 +25,7 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-const shipping = () => {
+const returns = () => {
     return (
         <ThemeProvider theme={theme}>
             <Container component="main" maxWidth="xs">
@@ -39,26 +38,31 @@ const shipping = () => {
                     alignItems: 'center',
                   }}
                 >
-                    <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-                        <LockOutlinedIcon />
-                    </Avatar>
-                    <Row>
-                        <Typography component="h1" variant="h5">
-                        Shipping Policy
-                        </Typography>
-                        <img src="/images/truck.PNG"></img>
-                    </Row>
-                    <Row>
-                        <img src="/images/fedexLogo.PNG"></img><img src="/images/uspsLogo.PNG"></img>
-                    </Row>
-                    <Row>
-                        <p> All items ship with USPS Priority Mail or FedEx 2-day air to ensure delivery to your location within 2 business days. Shipping costs are included in prices so there are no surprises! You will recieve a confirmation email with your shipping tracking information as soon as your item ships.</p> 
-                    </Row>
+                  <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+                    <LockOutlinedIcon />
+                  </Avatar>
+                <Row>
+                    <Typography component="h1" variant="h5">
+                    Return Policy
+                    </Typography>
+                </Row>
+                <Row>
+                    <p>
+                      Our return policy is simple, if your item is damaged or arrives not in the condition advertised, you will be able to return your item or exchange it for a replacement at no charge to you.  
+                    </p> 
+                    <p>
+                      In the event that what you recieve does not match the item you ordered, reach out to our customer service team and they will provide you with a return authorization (RMA) and send you a postage-paid return shipping label. If a replacement is not desired, you will be refunded the full amount of your purchase once the return is recieved at our return processing center. 
+                    </p>
+                    <p><a href="mailto:customerservice@ecommercemarketplace.com"> Email Us </a> to inquire about a return</p>
+
+                </Row>
                 </Box>
                 <Copyright sx={{ mt: 8, mb: 4 }} />
+
             </Container>
         </ThemeProvider>
+
     )
 };
 
-export default shipping;
+export default returns;

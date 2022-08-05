@@ -2,9 +2,6 @@ import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
@@ -28,20 +25,21 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-export default function contactFormSubmit() {
+export default function addProduct() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     console.log({
-      email: data.get('email'),
-      message: data.get('message'),
+      name: data.get('productName'),
+      price: data.get('productPrice'),
+      description: data.get('productDescription'),
+      category: data.get('category'),
     });
   };
-}
 
-const contact = () => {
-
+const productForm = () => {
 return (
+
 <ThemeProvider theme={theme}>
     <Container component="main" maxWidth="xs">
         <CssBaseline />
@@ -58,43 +56,48 @@ return (
           </Avatar>
         <Row>
             <Typography component="h1" variant="h5">
-            Contact Us
-            </Typography>
+            Add A Product To Sell
+          </Typography>
         </Row>
         <Row>
-            <Col xs={12} md={6}>
-
-                <p>Our trained support staff are on call 24/7 to assist with any issues you may have.</p>
-                <p>Phone: 404-123-4567</p>
-                <p>Email: 
-                <a href="mailto:customerservice@ecommercemarketplace.com"> customerservice@ecommercemarketplace.com </a></p>
-                <h3>Shipping Questions:</h3>
-                <p>
-                Visit our shipping FAQ page <a href="/shipping" target="top">here</a>
-                </p>
-            </Col>
-
-            <Col xs={12} md={6}>
-                <h2>Ask Ecommerce Marketplace A Question</h2>
-                <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+        <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
             <TextField
               margin="normal"
               required
               fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
+              id="productName"
+              label="Product Name"
+              name="product-name"
               autoFocus
             />
             <TextField
               margin="normal"
               required
               fullWidth
-              name="message"
-              label="Message"
-              type="text"
-              id="message"
+              name="product-price"
+              label="Sale Price"
+              // type="??" INSERT VALIDATION FOR DECIMAL NUMBER   
+              id="productPrice"
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              id="productDescription"
+              label="Product Description"
+              name="product-description"
               variant="outlined"
+              rows="6"
+              autoFocus
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              id="category"
+              label="Category"
+              name="category"
+              autoFocus
             />
             <Button
               type="submit"
@@ -102,16 +105,17 @@ return (
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Contact Us
+              Sign In
             </Button>
-            </Col>
-        </Row>
+          </Box>
+          </Row>
         </Box>
         <Copyright sx={{ mt: 8, mb: 4 }} />
-
     </Container>
 </ThemeProvider>
+
 )
 };
 
-export default contact;
+export default productForm;
+

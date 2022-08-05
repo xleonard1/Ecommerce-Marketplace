@@ -10,7 +10,6 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-
 function Copyright(props) {
     return (
       <Typography variant="body2" color="text.secondary" align="center" {...props}>
@@ -26,7 +25,7 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-const shipping = () => {
+const careers = () => {
     return (
         <ThemeProvider theme={theme}>
             <Container component="main" maxWidth="xs">
@@ -39,26 +38,26 @@ const shipping = () => {
                     alignItems: 'center',
                   }}
                 >
-                    <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-                        <LockOutlinedIcon />
-                    </Avatar>
-                    <Row>
-                        <Typography component="h1" variant="h5">
-                        Shipping Policy
-                        </Typography>
-                        <img src="/images/truck.PNG"></img>
-                    </Row>
-                    <Row>
-                        <img src="/images/fedexLogo.PNG"></img><img src="/images/uspsLogo.PNG"></img>
-                    </Row>
-                    <Row>
-                        <p> All items ship with USPS Priority Mail or FedEx 2-day air to ensure delivery to your location within 2 business days. Shipping costs are included in prices so there are no surprises! You will recieve a confirmation email with your shipping tracking information as soon as your item ships.</p> 
-                    </Row>
+                  <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+                    <LockOutlinedIcon />
+                  </Avatar>
+                <Row>
+                    <Typography component="h1" variant="h5">
+                    Careers
+                    </Typography>
+                </Row>
+                <Row>
+                    <p>
+                    Ecommerce is a booming business and we are always looking for excellent candidates to join our expanding team of industry professionals. We take pride in being an inclusive workplace with a fun, fast moving culture of positive momentum and employee growth.  Reach out to us if you think you'd be a good fit for our team! We can't wait to hear from you.    
+                    </p> 
+                </Row>
                 </Box>
                 <Copyright sx={{ mt: 8, mb: 4 }} />
+
             </Container>
         </ThemeProvider>
+
     )
 };
 
-export default shipping;
+export default careers;
