@@ -1,11 +1,21 @@
 const {User, Product, Category, Order } = require('../models');
+const Cart = require('../models/Cart');
 
 const { signToken } = require('../utils/auth');
 const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
 
+
+
+
+
 const resolvers = {
   Query: {
+    categories: async () => {
+      return await Category.find();
+    },
+
+  
     products: async (parent, { category, name }) => {
       const params = {};
 
@@ -18,8 +28,6 @@ const resolvers = {
           $regex: name
         };
       }
-
-      return await Product.find(params).populate('category');
     },
 
     product: async (parent, {username }) => {
@@ -38,7 +46,7 @@ const resolvers = {
 
       throw new AuthenticationError('Not logged in');
     },
-    
+
      orders: async (parent, {username }) => {
       return await Order.find(username).populate('orders');
      },
@@ -123,12 +131,17 @@ const resolvers = {
       throw new AuthenticationError('Not logged in');
     },
 
-    updateProduct: async (parent, { _id, quantity }) => {
-      const decrement = Math.abs(quantity) * -1;
-
-      return await Product.findByIdAndUpdate(_id, { $inc: { quantity: decrement } }, { new: true });
+    updateProduct: async (parent, { args}) => {
+            
+      return await Product.findByIdAndUpdate( args, { new: true });
     },
-    
+    updateCart: async (parent, args, context) => {
+      const cart = new Cart({ args });
+
+      await Cart.findByIdAndUpdate(context.user._id, args, {new: true})
+
+    },
+
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 
