@@ -148,9 +148,9 @@ const Navbar = () => {
           </Badge>
         </Icons>
         <Button
-          variant="text"
-          id="demo-positioned-menu"
-          aria-labelledby="demo-positioned-button"
+          // variant="text"
+          // id="demo-positioned-menu"
+          // aria-labelledby="demo-positioned-button"
           // open={open}
           // onClose={(e) => setOpen(false)}
           // anchororigin={{
