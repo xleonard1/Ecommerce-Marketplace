@@ -112,7 +112,6 @@ const Navbar = () => {
       </TopBar>
       <StyledToolbar>
         <Box sx={{ display: "flex" }}>
-          <div>
               <React.Fragment key={'left'}>
                 <IconButton
                   size="large"
@@ -132,7 +131,6 @@ const Navbar = () => {
                   {list('left')}
                 </Drawer>
               </React.Fragment>
-          </div>
           <Typography
             variant="h6"
             sx={{ display: { xs: "none", sm: "block", alignSelf: "center", color: 'black' } }}
