@@ -63,7 +63,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   //state for menu drawer
   const [state, setState] = React.useState({
-    top: false,
+    left: false,
   });
 
   //toggle function on menu button
@@ -78,7 +78,7 @@ const Navbar = () => {
   //list on the menu drawer
   const list = (anchor) => (
     <Box
-      sx={{ width: anchor === 'menu' || anchor === 'bottom' ? 'auto' : 250 }}
+      sx={{ width:  250 }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
@@ -112,38 +112,28 @@ const Navbar = () => {
       </TopBar>
       <StyledToolbar>
         <Box sx={{ display: "flex" }}>
-          {/* <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-          >
-            <Menu sx={{color: 'black'}}/>
-          </IconButton> */}
           <div>
-            {['menu'].map((anchor) => (
-              <React.Fragment key={anchor}>
+              <React.Fragment key={'left'}>
+                <Button onClick={toggleDrawer('left', true)}>
                 <IconButton
                   size="large"
                   edge="start"
                   color="inherit"
                   aria-label="open drawer"
                   sx={{ mr: 2 }}
-                  onClick={toggleDrawer(anchor, true)}              
+                  onClick={toggleDrawer('left', true)}              
                 >
-                  {anchor}<Menu sx={{color: 'black'}}/>
+                  <Menu sx={{color: 'black'}}/>
                 </IconButton>
-                <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
+                </Button>
                 <Drawer
-                  anchor={anchor}
-                  open={state[anchor]}
-                  onClose={toggleDrawer(anchor, false)}
+                  anchor={'left'}
+                  open={state['left']}
+                  onClose={toggleDrawer('left', false)}
                 >
-                  {list(anchor)}
+                  {list('left')}
                 </Drawer>
               </React.Fragment>
-            ))} 
           </div>
           <Typography
             variant="h6"
@@ -165,16 +155,16 @@ const Navbar = () => {
           variant="text"
           id="demo-positioned-menu"
           aria-labelledby="demo-positioned-button"
-          open={open}
-          onClose={(e) => setOpen(false)}
-          anchororigin={{
-            vertical: "top",
-            horizontal: "right",
-          }}
-          transformorigin={{
-            vertical: "top",
-            horizontal: "right",
-          }}
+          // open={open}
+          // onClose={(e) => setOpen(false)}
+          // anchororigin={{
+          //   vertical: "top",
+          //   horizontal: "right",
+          // }}
+          // transformorigin={{
+          //   vertical: "top",
+          //   horizontal: "right",
+          // }}
           sx={{color: 'black'}}
         >
           <Typography>Brands</Typography>
