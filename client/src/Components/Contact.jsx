@@ -28,6 +28,15 @@ function Copyright(props) {
 
 const theme = createTheme();
 
+export default function contactFormSubmit() {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    console.log({
+      email: data.get('email'),
+      message: data.get('message'),
+    });
+  };
 
 const contact = () => {
 
@@ -66,24 +75,33 @@ return (
 
             <Col xs={12} md={6}>
                 <h2>Ask Ecommerce Marketplace A Question</h2>
-                    <Form>
-                        <Form.Label>Email</Form.Label>
-                        <InputGroup hasValidation>
-                            <Form.Control type="email" required isInvalid/>
-                            <Form.Control.Feedback type="invalid">
-                            Please enter a valid email address.
-                            </Form.Control.Feedback>
-                        </InputGroup>
-
-                        <Form.Group className="mb-3" controlId="formContactBody">
-                            <Form.Label>Message</Form.Label>
-                            <Form.Control type="text" placeholder="Please enter your message here" />
-                        </Form.Group>
-
-                        <Button variant="primary" type="submit" className="right">
-                        Submit
-                        </Button>
-                    </Form>
+                <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              id="email"
+              label="Email Address"
+              name="email"
+              autoFocus
+            />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              name="message"
+              label="Message"
+              type="text"
+              id="message"
+            />
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              sx={{ mt: 3, mb: 2 }}
+            >
+              Contact Us
+            </Button>
             </Col>
         </Row>
         </Box>

@@ -25,6 +25,18 @@ function Copyright(props) {
 
 const theme = createTheme();
 
+// ** addToCart FUNCTION NEEDS REVISING FOR PROPER FUNCTIONALITY **
+
+export default function addToCart() {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    console.log(Product Added To Cart!);
+    // console.log({
+    //   email: data.get('email'),
+    //   message: data.get('message'),
+    // });
+  };
 
 const product = () => {
 return (
@@ -59,8 +71,15 @@ return (
             <h3> Category: ${product.category} Electronics </h3>
         </Row>
         <Row>
-            <p> ${product.price} $19.99</p>
-            <Button variant="contained">Add To Cart</Button>
+        <Box component="form" onSubmit={addToCart} noValidate sx={{ mt: 1 }}>
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              sx={{ mt: 3, mb: 2 }}
+            >
+              Add To Cart
+            </Button>
         </Row>
         </Box>
         <Copyright sx={{ mt: 8, mb: 4 }} />
