@@ -4,8 +4,6 @@ import {
   Button,
   Drawer,
   List,
-  Divider,
-  ListItem,
   Toolbar,
   styled,
   Typography,
@@ -86,7 +84,7 @@ const Navbar = () => {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        <Typography variant="h4">Shop By Category</Typography>
+        <Typography variant="h6">Shop By Category</Typography>
         <Typography variant="overline">Shoes</Typography>
         <Typography variant="overline">Bags</Typography>
         <Typography variant="overline">Clothes</Typography>
@@ -145,7 +143,7 @@ const Navbar = () => {
                   {list(anchor)}
                 </Drawer>
               </React.Fragment>
-            ))}
+            ))} 
           </div>
           <Typography
             variant="h6"
