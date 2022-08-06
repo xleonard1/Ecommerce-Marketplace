@@ -48,7 +48,6 @@ const Search = styled("div")(({ theme }) => ({
   width: "30%",
 }));
 
-
 //Code for NavBar
 const Navbar = () => {
   //state for menu drawer
