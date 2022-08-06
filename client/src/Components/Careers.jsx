@@ -18,8 +18,6 @@ const careers = () => {
                 <CssBaseline />
                 <Box
                   sx={{
-                    
-                    minWidth: 600,
                     marginTop: 8,
                     display: 'flex',
                     flexDirection: 'column',

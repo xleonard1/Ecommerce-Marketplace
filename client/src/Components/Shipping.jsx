@@ -28,7 +28,7 @@ const shipping = () => {
                 >
                   <Grid container spacing={1}>
                         <Grid item xs={12}>
-                            <Typography component="h1" variant="h5">
+                            <Typography component="h1" variant="h2">
                                 Shipping Policy
                             </Typography>
                             <img src={truck} alt="Delivery Van" />
