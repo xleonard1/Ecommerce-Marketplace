@@ -1,8 +1,9 @@
 const { Schema, model } = require('mongoose');
 
 const orderSchema = new Schema({
-  username: {
-    type: String,
+  userId: {
+    type: Schema.Types.ObjectId,
+    ref: "User"
 },
 products: [
     {
