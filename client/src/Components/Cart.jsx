@@ -1,9 +1,7 @@
 import {
   Box,
-  Button,
   Drawer,
   List,
-  styled,
   Typography,
   Badge,
   IconButton,
@@ -36,24 +34,20 @@ const Cart = () => {
   //list on the menu drawer
 const list = (anchor) => (
     <Box
-      sx={{ width: 250 }}
+      sx={{ width: 400 }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List
         sx={{
-          width: 250,
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
         }}
       >
-        <Typography variant="h6">Shop By Category</Typography>
-        <Button>Shoes</Button>
-        <Button>Bags</Button>
-        <Button>Clothes</Button>
-        <Button>Electronics</Button>
+        <Typography variant="h6" sx={{ml: 2}}>Shopping Cart</Typography>
+        
       </List>
     </Box>
   );
