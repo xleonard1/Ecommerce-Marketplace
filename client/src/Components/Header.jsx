@@ -20,6 +20,8 @@ import {
 } from "@mui/icons-material";
 import React, { useState } from "react";
 import Welcome from "./Welcome";
+import Cart from './Cart';
+
 
 //Custom Styling on bar with phone numbers
 const TopBar = styled("div")(({ theme }) => ({
@@ -153,11 +155,7 @@ const Navbar = () => {
             width: "25%",
           }}
         >
-          <IconButton>
-            <Badge badgeContent={1}>
-              <ShoppingCart />
-            </Badge>
-          </IconButton>
+          <Cart />
           <Button sx={{ color: "black" }}>
             <Typography>Brands</Typography>
           </Button>

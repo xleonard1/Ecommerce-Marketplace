@@ -1,31 +1,27 @@
 import {
-    AppBar,
-    Box,
-    Button,
-    Drawer,
-    List,
-    Toolbar,
-    styled,
-    Typography,
-    InputBase,
-    Badge,
-    IconButton,
-  } from "@mui/material";
-  import {
-    ShoppingCart,
-    Menu,
-    LocalShipping,
-    CreditCard,
-    LocalPhone,
-  } from "@mui/icons-material";
-  import React, { useState } from "react";
+  Box,
+  Button,
+  Drawer,
+  List,
+  styled,
+  Typography,
+  Badge,
+  IconButton,
+} from "@mui/material";
+import {
+  ShoppingCart,
+} from "@mui/icons-material";
+import React, { useState } from "react";
 
-  //state for menu drawer
+
+
+const Cart = () => {
+  //state for cart drawer
   const [state, setState] = useState({
-    left: false,
+    right: false,
   });
 
-  //toggle function on menu button
+  //toggle function on cart button
   const toggleDrawer = (anchor, open) => (event) => {
     if (
       event.type === "keydown" &&
@@ -38,7 +34,7 @@ import {
   };
 
   //list on the menu drawer
-  const list = (anchor) => (
+const list = (anchor) => (
     <Box
       sx={{ width: 250 }}
       role="presentation"
@@ -61,3 +57,30 @@ import {
       </List>
     </Box>
   );
+
+  return (
+    <React.Fragment key={"right"}>
+      <IconButton
+        size="large"
+        edge="start"
+        color="inherit"
+        aria-label="open drawer"
+        sx={{ mr: 2, color: 'black' }}
+        onClick={toggleDrawer("right", true)}
+      >
+        <Badge badgeContent={1}>
+          <ShoppingCart />
+        </Badge>
+      </IconButton>
+      <Drawer
+        anchor={"right"}
+        open={state["right"]}
+        onClose={toggleDrawer("right", false)}
+      >
+        {list("right")}
+      </Drawer>
+    </React.Fragment>
+  );
+};
+
+export default Cart;
