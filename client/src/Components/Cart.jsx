@@ -83,9 +83,9 @@ const list = (anchor) => (
                 <Typography>Total</Typography>
                 <Typography>$29</Typography>
             </Box>
-            <Box sx={{ mt: 2, display: 'flex', justifyContent: 'space-between', alignContent: 'baseline'}}>
-                <Typography>Total</Typography>
-                <Typography>$29</Typography>
+            <Box sx={{ mt: 2, display: 'flex', justifyContent: 'space-around', alignItems: 'center'}}>
+                <Button variant="outlined">Continue Shopping</Button>
+                <Button variant="outlined">Proceed To Checkout</Button>
             </Box>
     </Box>
   );
