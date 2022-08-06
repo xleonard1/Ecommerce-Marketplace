@@ -11,24 +11,13 @@ import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
+import contactUs from '../images/contact.png';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-function Copyright(props) {
-    return (
-      <Typography variant="body2" color="text.secondary" align="center" {...props}>
-        {'Copyright © '}
-        <Link color="inherit" href="https://mui.com/">
-          Your Website
-        </Link>{' '}
-        {new Date().getFullYear()}
-        {'.'}
-      </Typography>
-    );
-}
 
 const theme = createTheme();
 
-export default function contactFormSubmit() {
+export function contactFormSubmit() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -37,6 +26,7 @@ export default function contactFormSubmit() {
       message: data.get('message'),
     });
   };
+}
 
 const contact = () => {
 
@@ -52,68 +42,61 @@ return (
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-            <LockOutlinedIcon />
-          </Avatar>
-        <Row>
-            <Typography component="h1" variant="h5">
-            Contact Us
-            </Typography>
-        </Row>
-        <Row>
-            <Col xs={12} md={6}>
 
+          <Grid container spacing={1}>
+              <Grid item xs={12}></Grid>
+                <Typography component="h1" variant="h2">
+                  Contact Us
+                </Typography>
+              </Grid>
+              <Grid item xs={12}>
+                <img src={contactUs} alt="Contact Us" />
+              <Grid item xs={12}>
                 <p>Our trained support staff are on call 24/7 to assist with any issues you may have.</p>
-                <p>Phone: 404-123-4567</p>
+                <p>Phone: 222-222-2222</p>
                 <p>Email: 
                 <a href="mailto:customerservice@ecommercemarketplace.com"> customerservice@ecommercemarketplace.com </a></p>
-                <h3>Shipping Questions:<h3>
-                <p>
-                Visit our shipping FAQ page <a href="/shipping" target="top">here</a>
+                <p>For shipping questions please visit our <a href="/shipping" target="top"> shipping FAQ page.</a>
                 </p>
-            </Col>
-
-            <Col xs={12} md={6}>
+              </Grid>
+              <Grid item xs={12}>
                 <h2>Ask Ecommerce Marketplace A Question</h2>
-                <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoFocus
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="message"
-              label="Message"
-              type="text"
-              id="message"
-            />
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              Contact Us
-            </Button>
-            </Col>
-        </Row>
+                {/* **ADD onSubmit function ** onSubmit={}  */}
+                <Box component="form" 
+                noValidate sx={{ mt: 1 }}>
+                  <TextField
+                  margin="normal"
+                  required
+                  fullWidth
+                  id="email"
+                  label="Email Address"
+                  name="email"
+                  autoFocus
+                  />
+                  <TextField
+                  margin="normal"
+                  required
+                 fullWidth
+                  name="message"
+                  label="Message"
+                  type="text"
+                  id="message"
+                  variant="outlined"
+                  />
+                  <Button
+                  type="submit"
+                  fullWidth
+                  variant="contained"
+                  sx={{ mt: 3, mb: 2 }}
+                  >
+                  Contact Us
+                  </Button>
+                </Box>
+            </Grid>
+          </Grid>
         </Box>
-        <Copyright sx={{ mt: 8, mb: 4 }} />
     </Container>
 </ThemeProvider>
-)
-};
-
-export default contact;
-
-
 )
 };
 

@@ -1,20 +1,17 @@
 import * as React from 'react';
-import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import fedex from '../images/fedexLogo.png';
-import usps from '../images/uspsLogo.png';
-import truck from '../images/truck.png';
+import marketplace from '../images/marketplace.png';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 
 const theme = createTheme();
 
-const shipping = () => {
+const mission = () => {
     return (
         <ThemeProvider theme={theme}>
             <Container component="main" maxWidth="xs">
@@ -24,27 +21,30 @@ const shipping = () => {
                     marginTop: 8,
                     display: 'flex',
                     flexDirection: 'column',
+                    alignItems: 'center',
                   }}
                 >
+                  
                   <Grid container spacing={1}>
                         <Grid item xs={12}>
-                            <Typography component="h1" variant="h5">
-                                Shipping Policy
-                            </Typography>
-                            <img src={truck} alt="Delivery Van" />
+                          <Typography component="h1" variant="h2">
+                            Our Mission
+                          </Typography>
                         </Grid>
+
                         <Grid item xs={12}>
-                            <img src={fedex} alt="FedEx Logo" />
-                          <img src={usps} alt="USPS Logo" />
+                            <img src={marketplace} alt="Our Mission" />
+                          <p>
+                          Our mission is to create the best online marketplace, where shoppers and sellers are able to purchase truly world class, hard to find products from our network of reputable sellers.  Customer satisfaction is 100% guaranteed, so you can rest assured that if any issues arise during your shopping experience on Ecommerce Marketplace that it will be taken care of.  
+                        </p> 
                         </Grid>
-                        <Grid item xs={12}>
-                            <p> All items ship with USPS Priority Mail or FedEx 2-day air to ensure delivery to your location within 2 business days. Shipping costs are included in prices so there are no surprises! You will recieve a confirmation email with your shipping tracking information as soon as your item ships.</p> 
-                        </Grid>  
-                    </Grid>
+                      </Grid>
                 </Box>
+
             </Container>
         </ThemeProvider>
+
     )
 };
 
-export default shipping;
+export default mission;

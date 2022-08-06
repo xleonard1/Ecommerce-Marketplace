@@ -1,11 +1,20 @@
 const {User, Product, Category, Order } = require('../models');
+const Cart = require('../models/Cart');
 
 const { signToken } = require('../utils/auth');
-const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
+const stripe = require('stripe')('sk_test_51LTnsNB56uRiRR3o8Y4fSZbL55yqAlpZFOk5NA2TVewPDjEx1oABeW7bfXNiyI7dQIMWoeea5zB4sru4Ct1ZTFRn00meyj5tpY');
+
+
+
+
 
 
 const resolvers = {
   Query: {
+    categories: async () => {
+      return await Category.find();
+    },
+
     products: async (parent, { category, name }) => {
       const params = {};
 
@@ -127,7 +136,13 @@ const resolvers = {
             
       return await Product.findByIdAndUpdate( args, { new: true });
     },
-    
+    updateCart: async (parent, args, context) => {
+      const cart = new Cart({ args });
+
+      await Cart.findByIdAndUpdate(context.user._id, args, {new: true})
+
+    },
+
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 
