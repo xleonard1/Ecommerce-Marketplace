@@ -10,7 +10,7 @@ const products = [
         name: 'shoes',
         price: '$35',
         description: 'running shoes',
-        image: 'https://placehold.jp/200x200.png'
+        image: 'https://images.pexels.com/photos/19090/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
     },
     {
         id: 2,
@@ -47,7 +47,7 @@ const products = [
 const Products = () => {
     return (
         <main>
-            <Grid container justifyContent={'center'} spacing={4}>
+            <Grid container justifyContent={'center'} spacing={2}>
                 {products.map((product) => (
                     <Grid item key={product.id} xs={12} s={6} md={4} lg={3}>
                         <ProductCard product={product} />

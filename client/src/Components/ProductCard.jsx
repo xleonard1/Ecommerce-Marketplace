@@ -14,14 +14,15 @@ const Root = styled('div')(({ theme }) => ({
     maxWidth: '100%'
   },
  [`& .${classes.media}`]: {
-   height: 0,
+   height: 200,
+   width: 200,
    paddingTop: '56.25%', 
   },
   [`& .${classes.cardActions}`]: {
     display: 'flex',
     justifyContent: 'flex-end',
   },
-  [`& .${classes.CardContent}`]: {
+  [`& .${classes.cardContent}`]: {
     display: 'flex',
     justifyContent: 'space-between',
   },
@@ -32,9 +33,9 @@ const ProductCard = ({ product }) => {
 
     return (
         <Card className={classes.root}>
-            <CardMedia className={classes.media} image={product.image} title={product.name} />
+            <CardMedia component='img' className={classes.media} image={product.image} title={product.name} />
             <CardContent>
-                <div className={classes.CardContent}>
+                <div className={classes.cardContent}>
                     <Typography variant="h5" gutterBottom>
                         {product.name}
                     </Typography>
@@ -42,7 +43,7 @@ const ProductCard = ({ product }) => {
                         {product.price}
                     </Typography>
                 </div>
-                <Typography variant='h2' color='textSecondary'>{product.description}</Typography>
+                <Typography variant='body2' color='textSecondary'>{product.description}</Typography>
             </CardContent>
             <CardActions disableSpacing className={classes.CardActions}>
                 <IconButton aria-label='Add to Card'>
