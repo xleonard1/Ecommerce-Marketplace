@@ -2,7 +2,7 @@ const {User, Product, Category, Order } = require('../models');
 const Cart = require('../models/Cart');
 
 const { signToken } = require('../utils/auth');
-const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
+const stripe = require('stripe')('sk_test_51LTnsNB56uRiRR3o8Y4fSZbL55yqAlpZFOk5NA2TVewPDjEx1oABeW7bfXNiyI7dQIMWoeea5zB4sru4Ct1ZTFRn00meyj5tpY');
 
 
 
@@ -15,7 +15,6 @@ const resolvers = {
       return await Category.find();
     },
 
-  
     products: async (parent, { category, name }) => {
       const params = {};
 
@@ -28,6 +27,8 @@ const resolvers = {
           $regex: name
         };
       }
+
+      return await Product.find(params).populate('category');
     },
 
     product: async (parent, {username }) => {
