@@ -45,18 +45,11 @@ const Cart = (props) => {
   //list on the menu drawer
 const list = (anchor) => (
     <Box
-      sx={{ width: 400, ml: 2, mr: 2 }}
+      sx={{ width: 400, ml: 2, mr: 2, mt: 2 }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-        }}
-      >
         <Typography variant="h6" >Shopping Cart</Typography>
         <Box sx={{ mt: 2, display: 'flex', alignItems: 'center'}}>
             <Box
@@ -74,12 +67,26 @@ const list = (anchor) => (
                 <Delete sx={{justifyContent: 'space-between'}}/>
             </Button>
         </Box>
-        <Box sx={{ mt: 2, display: 'flex', justifyContent: 'space-between'}}>
-            <Typography>Price</Typography>
-            <Typography>$29</Typography>
-        </Box>
-        
-      </List>
+            <Box sx={{ mt: 2, display: 'flex', justifyContent: 'space-between'}}>
+                <Typography>Price</Typography>
+                <Typography>$29</Typography>
+            </Box>
+            <Box sx={{ mt: 2, display: 'flex', justifyContent: 'space-between'}}>
+                <Typography>Quantity</Typography>
+                <Typography>1</Typography>
+            </Box>
+            <Box sx={{ mt: 2, display: 'flex', justifyContent: 'space-between', alignContent: 'baseline'}}>
+                <Typography>Free Shipping</Typography>
+                <Typography>$0</Typography>
+            </Box>
+            <Box sx={{ mt: 2, display: 'flex', justifyContent: 'space-between', alignContent: 'baseline'}}>
+                <Typography>Total</Typography>
+                <Typography>$29</Typography>
+            </Box>
+            <Box sx={{ mt: 2, display: 'flex', justifyContent: 'space-between', alignContent: 'baseline'}}>
+                <Typography>Total</Typography>
+                <Typography>$29</Typography>
+            </Box>
     </Box>
   );
 
