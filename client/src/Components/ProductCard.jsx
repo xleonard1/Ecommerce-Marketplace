@@ -4,7 +4,7 @@ import { AddShoppingCart } from '@mui/icons-material';
 import product from './Product';
 
 
-const ProductCard = () => {
+const ProductCard = ({ product }) => {
     return (
         <Card className={classes.root}>
             <CardMedia className={classes.media} image={product.image} title={product.name} />
@@ -14,11 +14,16 @@ const ProductCard = () => {
                         {product.name}
                     </Typography>
                     <Typography variant="h5">
-                        {product.name}
+                        {product.price}
                     </Typography>
-
                 </div>
+                <Typography variant='h2' color='textSecondary'>{product.description}</Typography>
             </CardContent>
+            <CardActions disableSpacing className={classes.CardActions}>
+                <IconButton aria-label='Add to Card'>
+                    <AddShoppingCart />
+                </IconButton>
+            </CardActions>
         </Card>
     );
 }
