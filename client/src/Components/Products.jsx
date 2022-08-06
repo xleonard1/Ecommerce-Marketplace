@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid } from "@mui/material";
-import ProductCard from './ProductCard'
+import ProductCard from './ProductCard';
 
 
 //Testing products
