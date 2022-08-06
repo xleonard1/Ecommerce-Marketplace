@@ -5,7 +5,7 @@ import {
   Typography,
   Badge,
   IconButton,
-  ImageListItem
+  Link
 } from "@mui/material";
 import {
   ShoppingCart,
@@ -56,7 +56,7 @@ const list = (anchor) => (
         }}
       >
         <Typography variant="h6" sx={{ml: 2}}>Shopping Cart</Typography>
-        <Box sx={{ mt: 2, ml: 2}}>
+        <Box sx={{ mt: 2, ml: 2, display: 'flex', justifyContent:'start', alignItems: 'center'}}>
             <Box
             component="img"
             sx={{
@@ -66,6 +66,7 @@ const list = (anchor) => (
             alt="placeholder"
             src='https://placehold.jp/80x80.png'
             />
+            <Link href="#" underline="none" ml={1}>Product Info</Link>
         </Box>
       </List>
     </Box>
