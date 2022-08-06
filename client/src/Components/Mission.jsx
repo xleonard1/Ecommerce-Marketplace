@@ -5,6 +5,7 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
+import marketplace from '../images/marketplace.png';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 
@@ -30,7 +31,9 @@ const mission = () => {
                             Our Mission
                           </Typography>
                         </Grid>
+
                         <Grid item xs={12}>
+                            <img src={marketplace} alt="Our Mission" />
                           <p>
                           Our mission is to create the best online marketplace, where shoppers and sellers are able to purchase truly world class, hard to find products from our network of reputable sellers.  Customer satisfaction is 100% guaranteed, so you can rest assured that if any issues arise during your shopping experience on Ecommerce Marketplace that it will be taken care of.  
                         </p> 
