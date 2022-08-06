@@ -29,8 +29,8 @@ const Sort = () => {
         justifyContent: "space-between",
         alignItems: 'center',
         width: "50%",
-        
       }}
+      className="box-shadow"
     >
       <Typography>
         <strong>Showing:</strong> 10 products out of 12 products
@@ -54,9 +54,9 @@ const Sort = () => {
             "aria-labelledby": "basic-button",
           }}
         >
-          <MenuItem onClick={handleClose}>Profile</MenuItem>
-          <MenuItem onClick={handleClose}>My account</MenuItem>
-          <MenuItem onClick={handleClose}>Logout</MenuItem>
+          <MenuItem onClick={handleClose}>Newest</MenuItem>
+          <MenuItem onClick={handleClose}>Price: Low to High</MenuItem>
+          <MenuItem onClick={handleClose}>Price: High to Low</MenuItem>
         </Menu>
       </Box>
   );
