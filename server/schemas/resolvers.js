@@ -15,7 +15,6 @@ const resolvers = {
       return await Category.find();
     },
 
-  
     products: async (parent, { category, name }) => {
       const params = {};
 
@@ -28,6 +27,8 @@ const resolvers = {
           $regex: name
         };
       }
+
+      return await Product.find(params).populate('category');
     },
 
     product: async (parent, {username }) => {
