@@ -3,7 +3,6 @@ import Carousel from './Components/Carousel';
 // import Price from './Components/Price';
 import Rating from './Components/Rating';
 // import Footer from './Components/Footer';
-
 import Product from './Components/Product';
 import Mission from './Components/Mission';
 import Careers from './Components/Careers';
@@ -18,6 +17,7 @@ function App() {
   return (
     <div className="App">
       <Header/>
+      <Carousel />
 
 {/* --LEFT SIDE PAGE STATIC COMPONENTS-- */}
       {/* <Price /> */}
