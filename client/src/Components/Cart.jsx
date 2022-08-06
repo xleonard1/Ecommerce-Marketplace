@@ -5,15 +5,24 @@ import {
   Typography,
   Badge,
   IconButton,
+  ImageListItem
 } from "@mui/material";
 import {
   ShoppingCart,
 } from "@mui/icons-material";
 import React, { useState } from "react";
+import { borderRadius } from "@mui/system";
 
 
 
-const Cart = () => {
+const Cart = (props) => {
+
+    const { cartItems, handleRemoveFromCart } = props;
+
+    const handleProductClick = () => {
+        props.toggleCart();
+      };
+
   //state for cart drawer
   const [state, setState] = useState({
     right: false,
@@ -47,7 +56,17 @@ const list = (anchor) => (
         }}
       >
         <Typography variant="h6" sx={{ml: 2}}>Shopping Cart</Typography>
-        
+        <Box sx={{ mt: 2, ml: 2}}>
+            <Box
+            component="img"
+            sx={{
+            height: 80,
+            width: 80,
+            }}
+            alt="placeholder"
+            src='https://placehold.jp/80x80.png'
+            />
+        </Box>
       </List>
     </Box>
   );
