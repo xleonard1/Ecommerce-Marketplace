@@ -5,10 +5,12 @@ import {
   Typography,
   Badge,
   IconButton,
-  Link
+  Link,
+  Button
 } from "@mui/material";
 import {
   ShoppingCart,
+  Delete
 } from "@mui/icons-material";
 import React, { useState } from "react";
 import { borderRadius } from "@mui/system";
@@ -67,6 +69,11 @@ const list = (anchor) => (
             src='https://placehold.jp/80x80.png'
             />
             <Link href="#" underline="none" ml={1}>Product Info</Link>
+            <Box>
+                <Button>
+                    <Delete />
+                </Button>
+            </Box>
         </Box>
       </List>
     </Box>
