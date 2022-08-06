@@ -8,30 +8,35 @@ const products = [
     {
         id: 1,
         name: 'shoes',
+        price: '$35',
         description: 'running shoes',
         image: 'https://placehold.jp/200x200.png'
     },
     {
         id: 2,
         name: 'shirt',
+        price: '$20',
         description: 'woman\'s shirt',
         image: 'https://placehold.jp/200x200.png'
     },
     {
         id: 3,
         name: 'perfume',
+        price: '$40',
         description: 'nike perfume',
         image: 'https://placehold.jp/200x200.png'
     },
     {
         id: 4,
         name: 'sweatshirt',
+        price: '$25',
         description: 'read sweatshirt',
         image: 'https://placehold.jp/200x200.png'
     },
     {
         id: 5,
         name: 'Macbook',
+        price: '$500',
         description: 'Apple brand silver laptop',
         image: 'https://placehold.jp/200x200.png'
     },
