@@ -152,6 +152,7 @@ const Navbar = () => {
           sx={{
             display: "flex",
             justifyContent: "space-between",
+            alignItems: "center",
             width: "25%",
           }}
         >

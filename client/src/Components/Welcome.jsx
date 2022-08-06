@@ -21,7 +21,7 @@ const Welcome = () => {
         aria-controls={open ? 'demo-positioned-menu' : undefined}
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
-        sx={{color: 'black'}}
+        sx={{color: 'black', alignItems: 'center'}}
         onClick={handleClick}
       >
         <Typography>Welcome</Typography>
