@@ -45,7 +45,7 @@ const Cart = (props) => {
   //list on the menu drawer
 const list = (anchor) => (
     <Box
-      sx={{ width: 400 }}
+      sx={{ width: 400, ml: 2, mr: 2 }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
@@ -57,24 +57,28 @@ const list = (anchor) => (
           justifyContent: "center",
         }}
       >
-        <Typography variant="h6" sx={{ml: 2}}>Shopping Cart</Typography>
-        <Box sx={{ mt: 2, ml: 2, display: 'flex', justifyContent:'start', alignItems: 'center'}}>
+        <Typography variant="h6" >Shopping Cart</Typography>
+        <Box sx={{ mt: 2, display: 'flex', alignItems: 'center'}}>
             <Box
             component="img"
             sx={{
             height: 80,
             width: 80,
+            justifyContent:'start'
             }}
             alt="placeholder"
             src='https://placehold.jp/80x80.png'
             />
             <Link href="#" underline="none" ml={1}>Product Info</Link>
-            <Box>
-                <Button>
-                    <Delete />
-                </Button>
-            </Box>
+            <Button>
+                <Delete sx={{justifyContent: 'space-between'}}/>
+            </Button>
         </Box>
+        <Box sx={{ mt: 2, display: 'flex', justifyContent: 'space-between'}}>
+            <Typography>Price</Typography>
+            <Typography>$29</Typography>
+        </Box>
+        
       </List>
     </Box>
   );
