@@ -12,7 +12,6 @@ import {
   IconButton,
 } from "@mui/material";
 import {
-  ShoppingCart,
   Menu,
   LocalShipping,
   CreditCard,
@@ -151,15 +150,12 @@ const Navbar = () => {
         <Box
           sx={{
             display: "flex",
-            justifyContent: "space-between",
+            justifyContent: "space-around",
             alignItems: "center",
             width: "25%",
           }}
         >
           <Cart />
-          <Button sx={{ color: "black" }}>
-            <Typography>Brands</Typography>
-          </Button>
           <Button sx={{ color: "black" }}>
             <Typography>Shop</Typography>
           </Button>
