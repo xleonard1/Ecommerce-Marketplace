@@ -11,6 +11,7 @@ import Returns from './Components/Returns';
 import Shipping from './Components/Shipping';
 import ProductForm from './Components/ProductForm';
 import Sort from './Components/Sort';
+import Products from './Components/Products';
 
 import './App.css';
 
@@ -18,7 +19,7 @@ function App() {
   return (
     <div className="App">
       <Header/>
-      <Sort/>
+      {/* <Sort/> */}
       {/* <Carousel /> */}
 
 {/* --LEFT SIDE PAGE STATIC COMPONENTS-- */}
@@ -28,6 +29,7 @@ function App() {
 {/* --MAIN CONTENT PAGE COMPONENTS-- */}
       {/* <Carousel /> */}
       {/* <Product /> */}
+      <Products />
       {/* <ProductForm /> */}
       {/* <Contact /> */}
       {/* <Careers /> */}
