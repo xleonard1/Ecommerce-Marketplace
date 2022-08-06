@@ -43,25 +43,14 @@ const StyledToolbar = styled(Toolbar)({
 const Search = styled("div")(({ theme }) => ({
   backgroundColor: "white",
   padding: "0 10px",
-  borderColor: 'black',
+  borderColor: "black",
   borderRadius: theme.shape.borderRadius,
   width: "30%",
-}));
-
-//Custom on menu buttons
-const Icons = styled("div")(({ theme }) => ({
-  display: "none",
-  gap: "20px",
-  alignItems: "center",
-  [theme.breakpoints.up("sm")]: {
-    display: "flex",
-  },
 }));
 
 
 //Code for NavBar
 const Navbar = () => {
-
   //state for menu drawer
   const [state, setState] = useState({
     left: false,
@@ -69,7 +58,10 @@ const Navbar = () => {
 
   //toggle function on menu button
   const toggleDrawer = (anchor, open) => (event) => {
-    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
       return;
     }
 
@@ -79,12 +71,19 @@ const Navbar = () => {
   //list on the menu drawer
   const list = (anchor) => (
     <Box
-      sx={{ width:  250}}
+      sx={{ width: 250 }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List sx={{ width:  250, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+      <List
+        sx={{
+          width: 250,
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+        }}
+      >
         <Typography variant="h6">Shop By Category</Typography>
         <Button>Shoes</Button>
         <Button>Bags</Button>
@@ -93,7 +92,6 @@ const Navbar = () => {
       </List>
     </Box>
   );
-
 
   return (
     <AppBar position="sticky" style={{ background: "white" }}>
@@ -113,61 +111,61 @@ const Navbar = () => {
       </TopBar>
       <StyledToolbar>
         <Box sx={{ display: "flex" }}>
-              <React.Fragment key={'left'}>
-                <IconButton
-                  size="large"
-                  edge="start"
-                  color="inherit"
-                  aria-label="open drawer"
-                  sx={{ mr: 2 }}
-                  onClick={toggleDrawer('left', true)}              
-                >
-                  <Menu sx={{color: 'black'}}/>
-                </IconButton>         
-                <Drawer
-                  anchor={'left'}
-                  open={state['left']}
-                  onClose={toggleDrawer('left', false)}
-                >
-                  {list('left')}
-                </Drawer>
-              </React.Fragment>
+          <React.Fragment key={"left"}>
+            <IconButton
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="open drawer"
+              sx={{ mr: 2 }}
+              onClick={toggleDrawer("left", true)}
+            >
+              <Menu sx={{ color: "black" }} />
+            </IconButton>
+            <Drawer
+              anchor={"left"}
+              open={state["left"]}
+              onClose={toggleDrawer("left", false)}
+            >
+              {list("left")}
+            </Drawer>
+          </React.Fragment>
           <Typography
             variant="h6"
-            sx={{ display: { xs: "none", sm: "block", alignSelf: "center", color: 'black' } }}
+            sx={{
+              display: {
+                xs: "none",
+                sm: "block",
+                alignSelf: "center",
+                color: "black",
+              },
+            }}
           >
             E-COMMERCE MARKETPLACE
           </Typography>
         </Box>
         <Search>
-          <InputBase placeholder="Search Products"/>
+          <InputBase placeholder="Search Products" />
         </Search>
-        <Box sx={{ display: 'flex', justifyContent: 'space-between', width: '25%'}}>
-        <Icons>
-          <Badge badgeContent={1}>
-            <ShoppingCart />
-          </Badge>
-        </Icons>
-        <Button
-          // variant="text"
-          // id="demo-positioned-menu"
-          // aria-labelledby="demo-positioned-button"
-          // open={open}
-          // onClose={(e) => setOpen(false)}
-          // anchororigin={{
-          //   vertical: "top",
-          //   horizontal: "right",
-          // }}
-          // transformorigin={{
-          //   vertical: "top",
-          //   horizontal: "right",
-          // }}
-          sx={{color: 'black'}}
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            width: "25%",
+          }}
         >
-          <Typography>Brands</Typography>
-        </Button>
-        <Button sx={{color: 'black'}}><Typography>Shop</Typography></Button>
-        <Welcome />
+          <IconButton>
+            <Badge badgeContent={1}>
+              <ShoppingCart />
+            </Badge>
+          </IconButton>
+          <Button sx={{ color: "black" }}>
+            <Typography>Brands</Typography>
+          </Button>
+          <Button sx={{ color: "black" }}>
+            <Typography>Shop</Typography>
+          </Button>
+          <Welcome />
         </Box>
       </StyledToolbar>
     </AppBar>
