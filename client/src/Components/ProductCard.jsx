@@ -1,6 +1,6 @@
 import React from 'react';
-import {Card, CardMedia, CardContent, CardActions, Typography, IconButton, styled } from '@mui/material';
-import { AddShoppingCart } from '@mui/icons-material';
+import {Card, CardMedia, CardContent, CardActions, Typography, IconButton, styled, Checkbox } from '@mui/material';
+import { AddShoppingCart, Favorite, FavoriteBorder } from '@mui/icons-material';
 
 const PREFIX = 'MyCard';
 const classes = {
@@ -20,13 +20,16 @@ const Root = styled('div')(({ theme }) => ({
   },
   [`& .${classes.cardActions}`]: {
     display: 'flex',
-    justifyContent: 'flex-end',
+    justifyContent: 'space-between',
   },
   [`& .${classes.cardContent}`]: {
     display: 'flex',
     justifyContent: 'space-between',
   },
+
 }))
+
+const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
 
 const ProductCard = ({ product }) => {
@@ -49,6 +52,7 @@ const ProductCard = ({ product }) => {
                 <IconButton aria-label='Add to Card'>
                     <AddShoppingCart />
                 </IconButton>
+                <Checkbox {...label} icon={<FavoriteBorder />} checkedIcon={<Favorite />} />
             </CardActions>
         </Card>
     );

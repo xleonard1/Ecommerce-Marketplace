@@ -10,7 +10,7 @@ const products = [
         name: 'shoes',
         price: '$35',
         description: 'running shoes',
-        image: 'https://images.pexels.com/photos/19090/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+        image: 'https://placehold.jp/200x200.png'
     },
     {
         id: 2,
