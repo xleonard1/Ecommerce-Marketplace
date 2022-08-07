@@ -18,8 +18,6 @@ const careers = () => {
                 <CssBaseline />
                 <Box
                   sx={{
-                    
-                    minWidth: 600,
                     marginTop: 8,
                     display: 'flex',
                     flexDirection: 'column',
@@ -30,14 +28,29 @@ const careers = () => {
                     <Grid container spacing={1}>
                         <Grid item xs={12}>
                             <Typography component="h1" variant="h2">
-                            Careers
+                            Welcome Back, User Name 
                             </Typography>
                         </Grid>
                         <Grid item xs={12}>
                             <img src={careerImg} alt="careers" />
                             <p>
-                            Ecommerce is a booming business and we are always looking for excellent candidates to join our expanding team of industry professionals. We take pride in being an inclusive workplace with a fun, fast moving culture of positive momentum and employee growth.  Reach out to us if you think you'd be a good fit for our team! We can't wait to hear from you.    
+                            We're glad you're back on the Ecommerce Marketplace today! 
                             </p> 
+
+
+                            <h3>
+                            User Profile 
+                            </h3>
+                            <p>
+                            Insert User Info Here:
+                            User Name 
+                            User Since (Created Date)
+                            More user info from table? 
+                            </p>
+                            <Box>
+                            <Link href="/add-product" color='inherit'>Sell an Item</Link>
+                        </Box>
+
                         </Grid>
                     </Grid>
                 </Box>
