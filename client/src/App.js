@@ -9,11 +9,14 @@ import Carousel from './Components/Carousel';
 import Price from './Components/Price';
 import Rating from './Components/Rating';
 import Footer from './Components/Footer';
+import Sort from './Components/Sort';
+import productCard from './Components/ProductCard';
 
 // --Import Pages--
 
 import Home from './Pages/Home';
 import Product from './Pages/Product';
+import Products from './Pages/Products';
 import Mission from './Pages/Mission';
 import Careers from './Pages/Careers';
 import Contact from './Pages/Contact';
@@ -67,6 +70,11 @@ function App() {
       <Route 
       path="/product" 
       element={<Product />} 
+      />
+
+      <Route 
+      path="/products" 
+      element={<Products />} 
       />
 
 
