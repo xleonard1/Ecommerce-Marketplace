@@ -2,7 +2,7 @@ import * as React from 'react';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import { Typography } from '@mui/material';
+import { Typography, Link } from '@mui/material';
 
 const Welcome = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -41,8 +41,8 @@ const Welcome = () => {
           horizontal: 'left',
         }}
       >
-        <MenuItem onClick={handleClose}>Login</MenuItem>
-        <MenuItem onClick={handleClose}>Signup</MenuItem>
+        <Link underline="none" href="/login" color={'black'}><MenuItem onClick={handleClose} >Login</MenuItem></Link>
+        <Link underline="none" href="/login" color={'black'}><MenuItem onClick={handleClose} >Signup</MenuItem></Link>
       </Menu>
     </div>
   );

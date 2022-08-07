@@ -20,7 +20,6 @@ const Home = () => {
         <CssBaseline />
     <main>
       <div className="flex-row justify-center">
-       <h1> WELCOME TO OUR ECOMMERCE MARKETPLACE! </h1>
        <Carousel />
        
 
