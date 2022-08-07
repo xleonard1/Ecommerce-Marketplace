@@ -10,13 +10,14 @@ import careerImg from '../images/careers.png';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Carousel from '../Components/Carousel';
 
-
-
+const theme = createTheme();
 
 const Home = () => {
 
-
   return (
+    <ThemeProvider theme={theme}>
+    <Container>
+        <CssBaseline />
     <main>
       <div className="flex-row justify-center">
        <h1> WELCOME TO OUR ECOMMERCE MARKETPLACE! </h1>
@@ -24,14 +25,10 @@ const Home = () => {
        
 
 
-
-
-
-
-
-
       </div>
     </main>
+  </Container>
+</ThemeProvider>
   );
 };
 

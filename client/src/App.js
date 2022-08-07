@@ -22,8 +22,8 @@ import Shipping from './Pages/Shipping';
 import ProductForm from './Pages/ProductForm';
 import SellWithUs from './Pages/SellWithUs';
 import Oops404 from './Pages/Oops404';
-// import Login from './Pages/Login';
-// import Dashboard from './Pages/Dashboard';
+import Login from './Pages/Login';
+import Dashboard from './Pages/Dashboard';
 
 import './App.css';
 
@@ -76,11 +76,15 @@ function App() {
       />
 
 
-      {/* <Route 
+      <Route 
       path="/login" 
       element={<Login />} 
-      /> */}
+      />
 
+      <Route 
+      path="/dashboard" 
+      element={<Dashboard />} 
+      />
 
       <Route 
       path="/contact" 
