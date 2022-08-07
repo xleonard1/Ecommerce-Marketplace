@@ -12,7 +12,7 @@ import Footer from './Components/Footer';
 
 // --Import Pages--
 
-import Home from './Pages/Home';
+// import Home from './Pages/Home';
 import Product from './Pages/Product';
 import Mission from './Pages/Mission';
 import Careers from './Pages/Careers';
