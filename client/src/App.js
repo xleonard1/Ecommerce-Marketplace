@@ -12,7 +12,7 @@ import Footer from './Components/Footer';
 
 // --Import Pages--
 
-// import Home from './Pages/Home';
+import Home from './Pages/Home';
 import Product from './Pages/Product';
 import Mission from './Pages/Mission';
 import Careers from './Pages/Careers';
@@ -20,6 +20,8 @@ import Contact from './Pages/Contact';
 import Returns from './Pages/Returns';
 import Shipping from './Pages/Shipping';
 import ProductForm from './Pages/ProductForm';
+import SellWithUs from './Pages/SellWithUs';
+import Oops404 from './Pages/Oops404';
 // import Login from './Pages/Login';
 // import Dashboard from './Pages/Dashboard';
 
@@ -51,7 +53,7 @@ function App() {
           {/* Define a default route that will render the Home component */}
           <Route 
             path="/" 
-            element={<Product />} 
+            element={<Home />} 
           />
 
       {/* Define a route that will take in variable data */}
@@ -95,10 +97,10 @@ function App() {
       element={<Mission />} 
       />
 
-      {/* <Route 
+      <Route 
       path="/sell-with-us" 
       element={<SellWithUs />} 
-      /> */}
+      />
 
       <Route 
       path="/shipping" 
@@ -110,10 +112,10 @@ function App() {
       element={<Returns />} 
       />
 
-      {/* <Route 
-      path="/" 
+      <Route 
+      path="*" 
       element={<Oops404 />} 
-      /> */}
+      />
 
 
       </Routes>
