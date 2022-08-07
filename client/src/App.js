@@ -12,6 +12,7 @@ import Footer from './Components/Footer';
 import Sort from './Components/Sort';
 import productCard from './Components/ProductCard';
 
+
 // --Import Pages--
 
 import Home from './Pages/Home';

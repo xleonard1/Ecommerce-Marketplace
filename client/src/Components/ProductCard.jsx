@@ -5,23 +5,20 @@ import { AddShoppingCart, Favorite, FavoriteBorder, StarBorder} from '@mui/icons
 const PREFIX = 'MyCard';
 const classes = {
  root: `${PREFIX}-root`,
- cta: `${PREFIX}-cta`,
- content: `${PREFIX}-content`,
+ cardContent: `${PREFIX}-cardContent`,
+ cardActions: `${PREFIX}-cardActions`,
 }
 
 const Root = styled('div')(({ theme }) => ({
   [`&.${classes.root}`]: {
     maxWidth: '100%',
     margin: '10px'
-  },
-[`&.${classes.media}`]: {
-   paddingTop: '56.25%', 
-  },
-  [`&.${classes.cardContent}`]: {
+  },  
+  [`.${classes.cardContent}`]: {
     display: 'flex',
     justifyContent: 'space-between'
   },
-  [`&.${classes.cardActions}`]: {
+  [`.${classes.cardActions}`]: {
     display: 'flex',
     justifyContent: 'space-between',
   },
@@ -37,15 +34,15 @@ const ProductCard = ({ product }) => {
             <Card>
                 <CardMedia component='img' className={classes.media} image={product.image} title={product.name} />
                 <CardContent className={classes.cardContent}>
-                        <Typography variant="h5" gutterBottom>
+                        <Typography variant="h6" gutterBottom>
                             {product.name}
                         </Typography>
-                        <Typography variant="h5">
+                        <Typography variant="h6">
                             {product.price}
                         </Typography>             
                 </CardContent>
                 <Typography variant='body2' color='textSecondary'>{product.description}</Typography>
-                <CardActions disableSpacing className={classes.CardActions}>
+                <CardActions disableSpacing className={classes.cardActions}>
                     <IconButton aria-label='Add to Card'>
                         <AddShoppingCart />
                     </IconButton>
