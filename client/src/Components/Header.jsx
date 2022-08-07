@@ -10,6 +10,7 @@ import {
   InputBase,
   Badge,
   IconButton,
+  Link
 } from "@mui/material";
 import {
   Menu,
@@ -157,7 +158,7 @@ const Navbar = () => {
         >
           <Cart />
           <Button sx={{ color: "black" }}>
-            <Typography>Shop</Typography>
+            <Link underline="none" href="/products"><Typography color={'black'}>Shop</Typography></Link>
           </Button>
           <Welcome />
         </Box>
