@@ -61,6 +61,7 @@ function App() {
       element={<Product />} 
       /> */}
 
+      {/* --Example product route - delete once variable product is set up-- */}
       <Route 
       path="/product" 
       element={<Product />} 
