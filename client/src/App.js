@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Header from './Components/Header';
 import Carousel from './Components/Carousel';
-// import Price from './Components/Price';
+import Price from './Components/Price';
 import Rating from './Components/Rating';
 import Footer from './Components/Footer';
 
