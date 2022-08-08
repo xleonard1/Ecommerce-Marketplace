@@ -53,10 +53,10 @@ const Footer = () => {
             E-Commerce Site &reg; {new Date().getFullYear()}
           </Box>
           <Box textAlign='center' display={'flex'} justifyContent={'space-evenly'} pt={{xs: 2, sm: 2}} pb={{ xs: 2, s: 0}}>
-            <img src={fb} alt="facebook" />
-            <img src={insta} alt="instagram" />
-            <img src={twitter} alt="twitter" />
-            <img src={pinterest} alt="pinterest" />
+            <Link href="https://www.facebook.com" target='_blank'><img src={fb} alt="facebook" /></Link>
+            <Link href="https://www.instagram.com" target='_blank'><img src={insta} alt="instagram" /></Link>
+            <Link href="https://www.twitter.com" target='_blank'><img src={twitter} alt="twitter" /></Link>
+            <Link href="https://www.pinterest.com" target='_blank'><img src={pinterest} alt="pinterest" /></Link>
           </Box>
         </Container>
       </Box>
