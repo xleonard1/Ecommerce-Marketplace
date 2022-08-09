@@ -99,6 +99,14 @@ const resolvers = {
 
     //      user.orders.sort((a,b) => b.purchaseDate - a.purchaseDate)
 
+    //    }
+    //  }
+    user: async () => {
+      return await User.find();
+    },
+     
+
+
     //      return user;
     //    }
     //  }
@@ -106,6 +114,7 @@ const resolvers = {
     user: async (parent, {username }) => {
       return await User.find(username).populate('users');
      },
+
 
   },
 
