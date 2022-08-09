@@ -12,7 +12,6 @@ const classes = {
 const Root = styled('div')(({ theme }) => ({
   [`&.${classes.root}`]: {
     maxWidth: '100%',
-    margin: '10px'
   },  
   [`.${classes.cardContent}`]: {
     display: 'flex',

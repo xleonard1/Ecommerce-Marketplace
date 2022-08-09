@@ -1,8 +1,8 @@
 import * as React from "react";
-import { Slider, styled, Typography } from "@mui/material";
+import { Slider, styled, Typography, Card } from "@mui/material";
 import { Box } from "@mui/system";
 
-const RatingCard = styled("div")(({ theme }) => ({
+const RatingCard = styled(Card)(({ theme }) => ({
   position: "absolute",
   display: "flex",
   flexDirection: "column",
