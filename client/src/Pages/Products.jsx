@@ -2,9 +2,16 @@ import React from "react";
 import CssBaseline from '@mui/material/CssBaseline';
 import { Grid, Container } from "@mui/material";
 import ProductCard from '../Components/ProductCard';
+import Price from '../Components/Price';
+import Rating from '../Components/Rating';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const theme = createTheme();
+const classes = {
+    root: {
+        flexGrow: 1
+    }
+}
 
 //Testing products
 const products = [
@@ -56,6 +63,15 @@ const products = [
 const Products = () => {
     return (
         <ThemeProvider theme={theme}>
+            <Container main component="main">
+            <Grid container direction={'column'} spacing={10} alignItems={'space between'}>
+                <Grid item >
+                    <Price />
+                </Grid>
+                <Grid item >
+                    <Rating />
+                </Grid>
+            </Grid>
             <Grid container justifyContent={'center'} spacing={2}>
                 {products.map((product) => (
                     <Grid item key={product.id} xs={12} s={6} md={4} lg={2}>
@@ -63,6 +79,7 @@ const Products = () => {
                     </Grid>
                 ))}
             </Grid>
+            </Container>
         </ThemeProvider>
     );
 };
