@@ -103,10 +103,17 @@ const resolvers = {
     //    }
     //  }
     
-    user: async (parent, {username }) => {
-      return await User.find(username).populate('users');
-     },
+    user: async (parent, {username},context) => {
+      if(context.user) {
+        const user = await await User.findOne(context.username).populate('orders');
 
+
+        return user;
+      };
+    }
+
+
+    
   },
 
   Mutation: {
@@ -172,6 +179,7 @@ const resolvers = {
     }
     
   },
+
 };
 
 module.exports = resolvers;
