@@ -31,8 +31,8 @@ const resolvers = {
       return await Product.find(params).populate('category');
     },
 
-    product: async (parent, {username }) => {
-      return await Product.find(username).populate('products');
+    product: async (parent, {name }) => {
+      return await Product.find(name).populate('products');
      },
 
      cart: async (parent, { _id }, context) => {
@@ -90,16 +90,19 @@ const resolvers = {
       return { session: session.id };
     },
 
-     user: async (parent, args, context) => {
-       if (context.user) {
-         const user = await User.findById(context.user._id).populate({
-           path: 'orders.products',
-           populate: 'category'
-         });
+    //  user: async (parent, args, context) => {
+    //    if (context.user) {
+    //      const user = await User.findById(context.user._id).populate({
+    //        path: 'orders.products',
+    //        populate: 'category'
+    //      });
 
-         user.orders.sort((a,b) => b.purchaseDate - a.purchaseDate)
-       }
-     }
+    //      user.orders.sort((a,b) => b.purchaseDate - a.purchaseDate)
+    //    }
+    //  }
+    user: async () => {
+      return await User.find();
+    },
      
 
   },
