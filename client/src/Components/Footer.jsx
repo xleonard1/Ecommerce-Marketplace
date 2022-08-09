@@ -15,37 +15,37 @@ const Footer = () => {
             <Grid item xs={12} sm={4}>
               <Box borderBottom={1}>Customer Service</Box>
               <Box>
-                <Link href="/" color='inherit'>Contact Us</Link>
+                <Link href="/contact" color='inherit'>Contact Us</Link>
               </Box>
               <Box>
-                <Link href="/" color='inherit'>Sell With Us</Link>
+                <Link href="/sell-with-us" color='inherit'>Sell With Us</Link>
               </Box>
               <Box>
-                <Link href="/" color='inherit'>Shipping Policy</Link>
+                <Link href="/shipping" color='inherit'>Shipping Policy</Link>
               </Box>
             </Grid>
             <Grid item xs={12} sm={4}>
               <Box borderBottom={1}>Account</Box>
               <Box>
-                <Link href="/" color='inherit'>Login</Link>
+                <Link href="/dashboard" color='inherit'>My Account</Link>
               </Box>
               <Box>
-                <Link href="/" color='inherit'>Register</Link>
+                <Link href="/login" color='inherit'>Login</Link>
               </Box>
               <Box>
-                <Link href="/" color='inherit'></Link>
+                <Link href="/login" color='inherit'>Register</Link>
               </Box>
             </Grid>
             <Grid item xs={12} sm={4}>
               <Box borderBottom={1}>Company</Box>
               <Box>
-                <Link href="/" color='inherit'>Our Mission</Link>
+                <Link href="/mission" color='inherit'>Our Mission</Link>
               </Box>
               <Box>
-                <Link href="/" color='inherit'>Return Policy</Link>
+                <Link href="/returns" color='inherit'>Return Policy</Link>
               </Box>
               <Box>
-                <Link href="/" color='inherit'>Careers</Link>
+                <Link href="/careers" color='inherit'>Careers</Link>
               </Box>
             </Grid>
           </Grid>
@@ -53,10 +53,10 @@ const Footer = () => {
             E-Commerce Site &reg; {new Date().getFullYear()}
           </Box>
           <Box textAlign='center' display={'flex'} justifyContent={'space-evenly'} pt={{xs: 2, sm: 2}} pb={{ xs: 2, s: 0}}>
-            <img src={fb} alt="facebook" />
-            <img src={insta} alt="instagram" />
-            <img src={twitter} alt="twitter" />
-            <img src={pinterest} alt="pinterest" />
+            <Link href="https://www.facebook.com" target='_blank'><img src={fb} alt="facebook" /></Link>
+            <Link href="https://www.instagram.com" target='_blank'><img src={insta} alt="instagram" /></Link>
+            <Link href="https://www.twitter.com" target='_blank'><img src={twitter} alt="twitter" /></Link>
+            <Link href="https://www.pinterest.com" target='_blank'><img src={pinterest} alt="pinterest" /></Link>
           </Box>
         </Container>
       </Box>

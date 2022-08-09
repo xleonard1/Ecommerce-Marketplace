@@ -5,41 +5,40 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import careerImg from '../images/careers.png';
+import marketplace from '../images/marketplace.png';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 
 const theme = createTheme();
 
-const careers = () => {
+const mission = () => {
     return (
         <ThemeProvider theme={theme}>
             <Container component="main" maxWidth="xs">
                 <CssBaseline />
                 <Box
                   sx={{
-                    
-                    minWidth: 600,
                     marginTop: 8,
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
                   }}
                 >
-                    
-                    <Grid container spacing={1}>
+                  
+                  <Grid container spacing={1}>
                         <Grid item xs={12}>
-                            <Typography component="h1" variant="h2">
-                            Careers
-                            </Typography>
+                          <Typography component="h1" variant="h2">
+                            Our Mission
+                          </Typography>
                         </Grid>
+
                         <Grid item xs={12}>
-                            <img src={careerImg} alt="careers" />
-                            <p>
-                            Ecommerce is a booming business and we are always looking for excellent candidates to join our expanding team of industry professionals. We take pride in being an inclusive workplace with a fun, fast moving culture of positive momentum and employee growth.  Reach out to us if you think you'd be a good fit for our team! We can't wait to hear from you.    
-                            </p> 
+                            <img src={marketplace} alt="Our Mission" />
+                          <p>
+                          Our mission is to create the best online marketplace, where shoppers and sellers are able to purchase truly world class, hard to find products from our network of reputable sellers.  Customer satisfaction is 100% guaranteed, so you can rest assured that if any issues arise during your shopping experience on Ecommerce Marketplace that it will be taken care of.  
+                        </p> 
                         </Grid>
-                    </Grid>
+                      </Grid>
                 </Box>
 
             </Container>
@@ -48,4 +47,4 @@ const careers = () => {
     )
 };
 
-export default careers;
+export default mission;

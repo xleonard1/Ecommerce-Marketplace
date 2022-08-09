@@ -5,7 +5,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -13,19 +13,19 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const theme = createTheme();
 
-export function addProduct() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      name: data.get('productName'),
-      price: data.get('productPrice'),
-      description: data.get('productDescription'),
-      category: data.get('category'),
-    });
-  };
+// export function addProduct() {
+//   const handleSubmit = (event) => {
+//     event.preventDefault();
+//     const data = new FormData(event.currentTarget);
+//     console.log({
+//       name: data.get('productName'),
+//       price: data.get('productPrice'),
+//       description: data.get('productDescription'),
+//       category: data.get('category'),
+//     });
+//   };
 
-};
+// };
 
 const productForm = () => {
 return (
@@ -41,15 +41,19 @@ return (
             alignItems: 'center',
           }}
         >
-          
-        <Row>
-            <Typography component="h1" variant="h5">
-            Add A Product To Sell
-          </Typography>
-        </Row>
-        <Row>
-        <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-            <TextField
+          <Grid container spacing={1}>
+            <Grid item xs={12}>
+              <Typography component="h1" variant="h5">
+                Add A Product To Sell
+              </Typography>
+            </Grid>
+            <Grid item xs={12}>
+
+              {/* **ADD handleSubmit**               onSubmit={}  */}
+              <Box component="form" 
+
+              noValidate sx={{ mt: 1 }}>
+              <TextField
               margin="normal"
               required
               fullWidth
@@ -57,8 +61,8 @@ return (
               label="Product Name"
               name="product-name"
               autoFocus
-            />
-            <TextField
+              />
+              <TextField
               margin="normal"
               required
               fullWidth
@@ -66,8 +70,8 @@ return (
               label="Sale Price"
               // type="??" INSERT VALIDATION FOR DECIMAL NUMBER   
               id="productPrice"
-            />
-            <TextField
+              />
+              <TextField
               margin="normal"
               required
               fullWidth
@@ -77,8 +81,8 @@ return (
               variant="outlined"
               rows="6"
               autoFocus
-            />
-            <TextField
+              />
+              <TextField
               margin="normal"
               required
               fullWidth
@@ -86,17 +90,18 @@ return (
               label="Category"
               name="category"
               autoFocus
-            />
-            <Button
+              />
+              <Button
               type="submit"
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
-            >
-              Sign In
-            </Button>
-          </Box>
-          </Row>
+              >
+              Add Product
+              </Button>
+            </Box>
+          </Grid>
+          </Grid>
         </Box>
     </Container>
 </ThemeProvider>

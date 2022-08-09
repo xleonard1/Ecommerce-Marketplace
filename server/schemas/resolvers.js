@@ -98,12 +98,23 @@ const resolvers = {
     //      });
 
     //      user.orders.sort((a,b) => b.purchaseDate - a.purchaseDate)
+
     //    }
     //  }
     user: async () => {
       return await User.find();
     },
      
+
+
+    //      return user;
+    //    }
+    //  }
+    
+    user: async (parent, {username }) => {
+      return await User.find(username).populate('users');
+     },
+
 
   },
 
@@ -114,17 +125,22 @@ const resolvers = {
 
       return { token, user };
     },
-    addProduct: async (parent, { products }, context) => {
-      console.log(context);
-      if (context.user) {
-        const order = new Product({ products });
+    // addProduct: async (parent, { products }, context) => {
+    //   console.log(context);
+    //   if (context.user) {
+    //     const order = new Product({ products });
 
-        await User.findByIdAndUpdate(context.user._id, { $push: { products: product } });
+    //     await User.findByIdAndUpdate(context.user._id, { $push: { products: product } });
 
-        return order;
-      }
+    //     return order;
+    //   }
 
-      throw new AuthenticationError('Not logged in');
+    //   throw new AuthenticationError('Not logged in');
+    // },
+
+    addProduct: async (parent, args) => {
+       
+      return await Product.create(args);
     },
 
     updateUser: async (parent, args, context) => {
