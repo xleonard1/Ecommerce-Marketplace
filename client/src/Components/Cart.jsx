@@ -11,6 +11,7 @@ import {
   ShoppingCart,
   Delete
 } from "@mui/icons-material";
+import CartItem from "./CartItem";
 import React, { useState, useEffect } from "react";
 // import { loadStripe } from '@stripe/stripe-js';
 // import { useLazyQuery } from '@apollo/client';
@@ -108,32 +109,7 @@ const list = (anchor) => (
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-        <Typography variant="h6" >Shopping Cart</Typography>
-          <>
-        <Box sx={{ mt: 2, display: 'flex', alignItems: 'center'}}>
-            <Box
-            component="img"
-            sx={{
-            height: 80,
-            width: 80,
-            justifyContent:'start'
-            }}
-            alt="placeholder"
-            src='https://placehold.jp/80x80.png'
-            />
-            <Link href="#" underline="none" ml={1}>Product Info</Link>
-            <Button>
-                <Delete sx={{justifyContent: 'space-between'}}/>
-            </Button>
-        </Box>
-            <Box sx={{ mt: 2, display: 'flex', justifyContent: 'space-between'}}>
-                <Typography>Price</Typography>
-                <Typography>$29</Typography>
-            </Box>
-            <Box sx={{ mt: 2, display: 'flex', justifyContent: 'space-between'}}>
-                <Typography>Quantity</Typography>
-                <Typography>1</Typography>
-            </Box>
+       <CartItem />
             <Box sx={{ mt: 2, display: 'flex', justifyContent: 'space-between', alignContent: 'baseline'}}>
                 <Typography>Free Shipping</Typography>
                 <Typography>$0</Typography>
@@ -146,7 +122,6 @@ const list = (anchor) => (
                 <Button variant="outlined">Continue Shopping</Button>
                 <Button variant="outlined">Proceed To Checkout</Button>
             </Box>
-            </>
     </Box>
   );
 
