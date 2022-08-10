@@ -43,17 +43,19 @@ const CartItem = ({ product }) => {
             width: 80,
             justifyContent:'start'
             }}
-            alt="placeholder"
+            alt={product.description}
             src={product.imageUrl.length ? ( product.imageUrl) : ('https://placehold.jp/80x80.png)')}
             />
-            <Link href="#" underline="none" ml={1}>Product Info</Link>
-            <Button>
+            <Link href={'/product/:_id'} underline="none" ml={1}>{product.name}</Link>
+            <Button
+              onClick={() => removeFromCart(product)}
+            >
                 <Delete sx={{justifyContent: 'space-between'}}/>
             </Button>
         </Box>
             <Box sx={{ mt: 2, display: 'flex', justifyContent: 'space-between'}}>
                 <Typography>Price</Typography>
-                <Typography>$29</Typography>
+                <Typography>${product.price}</Typography>
             </Box>
             <Box sx={{ mt: 2, display: 'flex', justifyContent: 'space-between'}}>
                 <Typography>Quantity</Typography>
