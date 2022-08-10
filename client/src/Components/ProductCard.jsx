@@ -1,6 +1,11 @@
 import React from 'react';
 import {Card, CardMedia, CardContent, CardActions, Typography, IconButton, styled, Checkbox } from '@mui/material';
+import { Grid, Container } from "@mui/material";
+import Link from '@mui/material/Link';
+import Box from '@mui/material/Box';
 import { AddShoppingCart, Favorite, FavoriteBorder, StarBorder} from '@mui/icons-material';
+import CssBaseline from '@mui/material/CssBaseline';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const PREFIX = 'MyCard';
 const classes = {
@@ -25,11 +30,23 @@ const Root = styled('div')(({ theme }) => ({
 
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
+// const theme = createTheme();
 
 const ProductCard = ({ product }) => {
 
     return (
-        <Root className={classes.root}>
+      // <ThemeProvider theme={theme}>
+      // <Container component="main" maxWidth="xs">
+      //     <CssBaseline />
+      //     <Box
+      //       sx={{
+      //         marginTop: 8,
+      //         display: 'flex',
+      //         flexDirection: 'column',
+      //         alignItems: 'center',
+      //       }}
+      //     >
+            <Root className={classes.root}>
             <Card>
                 <CardMedia component='img' className={classes.media} image={product.image} title={product.name} />
                 <CardContent className={classes.cardContent}>
@@ -50,6 +67,9 @@ const ProductCard = ({ product }) => {
                 </CardActions>
             </Card>
         </Root>
+        // </Box>
+        //     </Container>
+        // </ThemeProvider>
     );
 }
 
