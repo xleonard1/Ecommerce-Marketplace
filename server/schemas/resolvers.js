@@ -1,3 +1,4 @@
+const { AuthenticationError } = require('apollo-server-express');
 const {User, Product, Category, Order } = require('../models');
 const Cart = require('../models/Cart');
 
@@ -90,32 +91,19 @@ const resolvers = {
       return { session: session.id };
     },
 
-    //  user: async (parent, args, context) => {
-    //    if (context.user) {
-    //      const user = await User.findById(context.user._id).populate({
-    //        path: 'orders.products',
-    //        populate: 'category'
-    //      });
+     user: async (parent, args, context) => {
+      console.log(context.user);
+       if (context.user) {
+         const user = await User.findById(context.user._id).populate({
+           path: 'orders.products',
+           populate: 'category'
+         });
 
-    //      user.orders.sort((a,b) => b.purchaseDate - a.purchaseDate)
-
-    //    }
-    //  }
-    user: async () => {
-      return await User.find();
-    },
-     
-
-
-    //      return user;
-    //    }
-    //  }
-    
-    user: async (parent, {username }) => {
-      return await User.find(username).populate('users');
-     },
-
-
+         user.orders.sort((a,b) => b.purchaseDate - a.purchaseDate)
+            return user;
+       }
+     } 
+  
   },
 
   Mutation: {
@@ -125,23 +113,23 @@ const resolvers = {
 
       return { token, user };
     },
-    // addProduct: async (parent, { products }, context) => {
-    //   console.log(context);
-    //   if (context.user) {
-    //     const order = new Product({ products });
+    addProduct: async (parent, { products }, context) => {
+      console.log(context);
+      if (context.user) {
+        const order = new Product({ products });
 
-    //     await User.findByIdAndUpdate(context.user._id, { $push: { products: product } });
+        await User.findByIdAndUpdate(context.user._id, { $push: { products: product } });
 
-    //     return order;
-    //   }
+        return order;
+      }
 
-    //   throw new AuthenticationError('Not logged in');
-    // },
-
-    addProduct: async (parent, args) => {
-       
-      return await Product.create(args);
+      throw new AuthenticationError('Not logged in');
     },
+
+    // addProduct: async (parent, args) => {
+       
+    //   return await Product.create(args);
+    // },
 
     updateUser: async (parent, args, context) => {
       if (context.user) {
@@ -181,6 +169,7 @@ const resolvers = {
     }
     
   },
+
 };
 
 module.exports = resolvers;
