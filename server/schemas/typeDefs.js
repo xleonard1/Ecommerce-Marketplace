@@ -67,8 +67,8 @@ const typeDefs = gql`
     addProduct(_id: ID, name: String, description: String!, price: Float, category: ID!): Product
     updateProduct(_id: ID!, quantity: Int!): Product
     updateUser(username: String!, email: String, password: String): User
-    addToCart(products: [ID]!): Cart
-    updateCart(id:ID!): Cart
+     addToCart(products: [ID]!): Cart
+     updateCart(id:ID!): Cart
     addOrder(products: [ID]!): Order
   }
   
