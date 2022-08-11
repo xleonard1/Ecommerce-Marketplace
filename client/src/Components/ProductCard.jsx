@@ -6,6 +6,10 @@ import Box from '@mui/material/Box';
 import { AddShoppingCart, Favorite, FavoriteBorder, StarBorder} from '@mui/icons-material';
 import CssBaseline from '@mui/material/CssBaseline';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useStoreContext } from "../utils/GlobalState";
+import {
+  ADD_TO_CART,
+} from "../utils/actions";
 
 const PREFIX = 'MyCard';
 const classes = {
@@ -33,6 +37,14 @@ const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 // const theme = createTheme();
 
 const ProductCard = ({ product }) => {
+  const [state, dispatch] = useStoreContext();
+  const handleAddToCart = () => {
+    // dispatch adding an item to cart
+    dispatch({
+      type: ADD_TO_CART,
+      product
+    })
+  }
 
     return (
       // <ThemeProvider theme={theme}>
@@ -59,7 +71,7 @@ const ProductCard = ({ product }) => {
                 </CardContent>
                 <Typography variant='body2' color='textSecondary'>{product.description}</Typography>
                 <CardActions disableSpacing className={classes.cardActions}>
-                    <IconButton aria-label='Add to Card'>
+                    <IconButton aria-label='Add to Cart' onClick={handleAddToCart}>
                         <AddShoppingCart />
                     </IconButton>
                     <Checkbox {...label} icon={<FavoriteBorder />} checkedIcon={<Favorite />} />

@@ -12,7 +12,8 @@ import { REMOVE_FROM_CART, UPDATE_CART_QUANTITY } from "../utils/actions";
 import { idbPromise } from "../utils/helpers";
 
 const CartItem = ({ product }) => {
-  const [, dispatch] = useStoreContext();
+  const [state, dispatch] = useStoreContext();
+  console.log('state', product)
 
   const removeFromCart = (item) => {
     dispatch({
@@ -54,7 +55,7 @@ const CartItem = ({ product }) => {
         }}
         alt={product.description}
         src={
-          product.imageUrl.length
+          product.imageUrl?.length
             ? product.imageUrl
             : "https://placehold.jp/80x80.png)"
         }
