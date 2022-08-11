@@ -87,19 +87,19 @@ const Navbar = () => {
       >
         <Typography variant="h6">Shop By Category</Typography>
 
-        <Link color="inherit" href="https://mui.com/">
+        <Link color="inherit" href="/shoes">
         <Button>Shoes</Button>
         </Link>
 
-        <Link color="inherit" href="https://mui.com/">
+        <Link color="inherit" href="/bags">
         <Button>Bags</Button>
         </Link>
 
-        <Link color="inherit" href="https://mui.com/">
+        <Link color="inherit" href="/clothing">
         <Button>Clothing</Button>
         </Link>
 
-        <Link color="inherit" href="https://mui.com/">
+        <Link color="inherit" href="/electronics">
         <Button>Electronics</Button>
         </Link>
       </List>
