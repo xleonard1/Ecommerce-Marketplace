@@ -100,6 +100,7 @@ const Navbar = () => {
         </Link>
 
         <Link color="inherit" href="/electronics">
+        
         <Button>Electronics</Button>
         </Link>
       </List>
