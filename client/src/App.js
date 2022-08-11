@@ -27,6 +27,10 @@ import ProductForm from './Pages/ProductForm';
 import SellWithUs from './Pages/SellWithUs';
 import Oops404 from './Pages/Oops404';
 import Login from './Pages/Login';
+import Shoes from './Pages/Shoes';
+import Bags from './Pages/Bags';
+import Clothing from './Pages/Clothing';
+import Electronics from './Pages/Electronics';
 import Dashboard from './Pages/Dashboard';
 
 import './App.css';
@@ -120,9 +124,29 @@ function App() {
       element={<Shipping />} 
       />
 
-      <Route 
+  <Route 
       path="/returns" 
       element={<Returns />} 
+      />    
+
+      <Route 
+      path="/shoes" 
+      element={<Shoes />} 
+      />
+
+      <Route 
+      path="/bags" 
+      element={<Bags />} 
+      />
+
+      <Route 
+      path="/clothing" 
+      element={<Clothing />} 
+      />
+
+      <Route 
+      path="/electronics" 
+      element={<Electronics />} 
       />
 
       <Route 
