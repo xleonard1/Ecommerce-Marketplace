@@ -32,6 +32,7 @@ import Bags from './Pages/Bags';
 import Clothing from './Pages/Clothing';
 import Electronics from './Pages/Electronics';
 import Dashboard from './Pages/Dashboard';
+import {StoreProvider} from './utils/GlobalState'
 
 import './App.css';
 
@@ -44,6 +45,7 @@ function App() {
   return (
 
 <ApolloProvider client={client}>
+  <StoreProvider>
   <Router>
     <div className="App flex-column justify-flex-start min-100-vh">
       <Header />
@@ -163,6 +165,7 @@ function App() {
 
     </div>
     </Router>
+    </StoreProvider>
     </ApolloProvider>
   );
 }

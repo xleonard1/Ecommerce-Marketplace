@@ -1,12 +1,18 @@
-import React from "react";
+import React, {useEffect} from "react";
 import CssBaseline from '@mui/material/CssBaseline';
-import { Grid, Container } from "@mui/material";
+import { Grid, Container, CircularProgress } from "@mui/material";
 import Box from '@mui/material/Box';
 import ProductCard from '../Components/ProductCard';
 import Price from '../Components/Price';
 import Rating from '../Components/Rating';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { spacing } from '@mui/system'
+import { useQuery } from "@apollo/client";
+import {QUERY_ALL_PRODUCTS} from '../utils/queries';
+import { useStoreContext } from "../utils/GlobalState";
+import {
+  UPDATE_PRODUCTS,
+} from "../utils/actions";
 
 
 const theme = createTheme();
@@ -107,6 +113,19 @@ const products = [
 
 
 const Products = () => {
+    const {loading, data} = useQuery(QUERY_ALL_PRODUCTS)
+    const [state, dispatch] = useStoreContext()
+
+    useEffect(() => {
+        if (!loading && data) {
+            console.log('data', data)
+            dispatch({
+                type: UPDATE_PRODUCTS,
+                products: data.products
+            })
+        }
+    }, [loading, data])
+    console.log('data', data)
     return (
         <ThemeProvider theme={theme}>
             <Container main component="main">
@@ -133,7 +152,8 @@ const Products = () => {
                 </Grid>
                 <Grid container item xs={10} spacing={2} ml
                 ={40} mt={-20}>
-                {products.map((product) => (
+                {loading ? <CircularProgress /> :
+                state.products.map((product) => (
                     <Grid item key={product.id} xs={12} s={6} md={4} lg={4}>
                         <ProductCard product={product} />
                     </Grid>

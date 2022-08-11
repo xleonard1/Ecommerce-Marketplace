@@ -12,7 +12,9 @@ import {
   Delete
 } from "@mui/icons-material";
 import CartItem from "./CartItem";
+import { useStoreContext } from "../utils/GlobalState"
 import React, { useState, useEffect } from "react";
+
 // import { loadStripe } from '@stripe/stripe-js';
 // import { useLazyQuery } from '@apollo/client';
 // import { QUERY_CHECKOUT } from '../utils/queries';
@@ -25,7 +27,9 @@ import React, { useState, useEffect } from "react";
 // const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
 const Cart = () => {
-
+  
+  const [state, dispatch] = useStoreContext();
+  
   const [drawerState, setDrawerState] = useState({
     right: false,
   });
@@ -109,7 +113,10 @@ const list = (anchor) => (
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-       <CartItem />
+      {state.cart.map((item, index) => {
+        return <CartItem product={item} key={index} />
+      })}
+       
             <Box sx={{ mt: 2, display: 'flex', justifyContent: 'space-between', alignContent: 'baseline'}}>
                 <Typography>Free Shipping</Typography>
                 <Typography>$0</Typography>
