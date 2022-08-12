@@ -24,92 +24,92 @@ const classes = {
 }
 
 //Testing products
-const products = [
-    {
-        id: 1,
-        name: 'shoes',
-        price: '$35',
-        description: 'running shoes',
-        image: 'https://picsum.photos/200'
-    },
-    {
-        id: 2,
-        name: 'shirt',
-        price: '$20',
-        description: 'woman\'s shirt',
-        image: 'https://placehold.jp/200x200.png'
-    },
-    {
-        id: 3,
-        name: 'perfume',
-        price: '$40',
-        description: 'nike perfume',
-        image: 'https://picsum.photos/200'
-    },
-    {
-        id: 4,
-        name: 'sweatshirt',
-        price: '$25',
-        description: 'read sweatshirt',
-        image: 'https://placehold.jp/200x200.png'
-    },
-    {
-        id: 5,
-        name: 'Macbook',
-        price: '$500',
-        description: 'Apple brand silver laptop',
-        image: 'https://picsum.photos/200'
-    },  
-    {
-        id: 6,
-        name: 'Macbook',
-        price: '$500',
-        description: 'Apple brand silver laptop',
-        image: 'https://placehold.jp/200x200.png'
-    },
-        {
-        id: 7,
-        name: 'Nice shoes',
-        price: '$75',
-        description: 'Nice running shoes',
-        image: 'https://picsum.photos/200'
-    },
-    {
-        id: 8,
-        name: 'Boutique shirt',
-        price: '$80',
-        description: 'woman\'s shirt',
-        image: 'https://placehold.jp/200x200.png'
-    },
-    {
-        id: 9   ,
-        name: 'Rare perfume',
-        price: '$99',
-        description: 'nike perfume',
-        image: 'https://picsum.photos/200'
-    },
-    {
-        id: 10,
-        name: 'Luxe sweatshirt',
-        price: '$85',
-        description: 'read sweatshirt',
-        image: 'https://placehold.jp/200x200.png'
-    },
-    {
-        id: 11,
-        name: 'Maxed Macbook',
-        price: '$950',
-        description: 'Apple brand silver laptop',
-        image: 'https://picsum.photos/200'
-    },  
-    {
-        id: 12,
-        name: 'Mega Macbook',
-        price: '$1500',
-        description: 'Apple brand mega silver laptop',
-        image: 'https://placehold.jp/200x200.png'
-    },
-]
+// const products = [
+//     {
+//         id: 1,
+//         name: 'shoes',
+//         price: '$35',
+//         description: 'running shoes',
+//         image: 'https://picsum.photos/200'
+//     },
+//     {
+//         id: 2,
+//         name: 'shirt',
+//         price: '$20',
+//         description: 'woman\'s shirt',
+//         image: 'https://placehold.jp/200x200.png'
+//     },
+//     {
+//         id: 3,
+//         name: 'perfume',
+//         price: '$40',
+//         description: 'nike perfume',
+//         image: 'https://picsum.photos/200'
+//     },
+//     {
+//         id: 4,
+//         name: 'sweatshirt',
+//         price: '$25',
+//         description: 'read sweatshirt',
+//         image: 'https://placehold.jp/200x200.png'
+//     },
+//     {
+//         id: 5,
+//         name: 'Macbook',
+//         price: '$500',
+//         description: 'Apple brand silver laptop',
+//         image: 'https://picsum.photos/200'
+//     },  
+//     {
+//         id: 6,
+//         name: 'Macbook',
+//         price: '$500',
+//         description: 'Apple brand silver laptop',
+//         image: 'https://placehold.jp/200x200.png'
+//     },
+//         {
+//         id: 7,
+//         name: 'Nice shoes',
+//         price: '$75',
+//         description: 'Nice running shoes',
+//         image: 'https://picsum.photos/200'
+//     },
+//     {
+//         id: 8,
+//         name: 'Boutique shirt',
+//         price: '$80',
+//         description: 'woman\'s shirt',
+//         image: 'https://placehold.jp/200x200.png'
+//     },
+//     {
+//         id: 9   ,
+//         name: 'Rare perfume',
+//         price: '$99',
+//         description: 'nike perfume',
+//         image: 'https://picsum.photos/200'
+//     },
+//     {
+//         id: 10,
+//         name: 'Luxe sweatshirt',
+//         price: '$85',
+//         description: 'read sweatshirt',
+//         image: 'https://placehold.jp/200x200.png'
+//     },
+//     {
+//         id: 11,
+//         name: 'Maxed Macbook',
+//         price: '$950',
+//         description: 'Apple brand silver laptop',
+//         image: 'https://picsum.photos/200'
+//     },  
+//     {
+//         id: 12,
+//         name: 'Mega Macbook',
+//         price: '$1500',
+//         description: 'Apple brand mega silver laptop',
+//         image: 'https://placehold.jp/200x200.png'
+//     },
+// ]
 
 
 const Products = () => {

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState } from 'react';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
@@ -7,6 +8,12 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+import {AdvancedImage} from '@cloudinary/react';
+import {Cloudinary} from "@cloudinary/url-gen";
+
+// Import any actions required for transformations.
+import {fill} from "@cloudinary/url-gen/actions/resize";
 
 
 const theme = createTheme();
@@ -25,7 +32,38 @@ const theme = createTheme();
 
 // };
 
-const productForm = () => {
+const ProductForm = () => {
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    console.log({
+      name: data.get('productName'),
+      price: data.get('productPrice'),
+      description: data.get('productDescription'),
+      category: data.get('category'),
+    });
+  };
+
+  const [image, setImage ] = useState("");
+  const [ url, setUrl ] = useState("");
+  const uploadImage = () => {
+  const data = new FormData()
+  data.append("file", image)
+  data.append("upload_preset", "tutorial")
+  data.append("cloud_name","dcldpb9uf")
+  fetch("  https://api.cloudinary.com/v1_1/dcldpb9uf/image/upload",{
+  method:"post",
+  body: data
+  })
+  .then(resp => resp.json())
+  .then(data => {
+  setUrl(data.url)
+  })
+  .catch(err => console.log(err))
+  }
+
+
 return (
 
 <ThemeProvider theme={theme}>
@@ -40,6 +78,21 @@ return (
           }}
         >
           <Grid container spacing={1}>
+
+                <div>
+                  <div>
+                    <input type="file" onChange= {(e)=> setImage(e.target.files[0])}></input>
+                    <button onClick={uploadImage}>Upload</button>
+                  </div>
+                  <div>
+                    <h1>Uploaded image will be displayed here</h1>
+                    <img src={url}/>
+                  </div>
+                  </div>
+
+
+
+
             <Grid item xs={12}>
               <Typography component="h1" variant="h5">
                 Add A Product To Sell
@@ -49,7 +102,6 @@ return (
 
               {/* **ADD handleSubmit**               onSubmit={}  */}
               <Box component="form" 
-
               noValidate sx={{ mt: 1 }}>
               <TextField
               margin="normal"
@@ -80,15 +132,19 @@ return (
               rows="6"
               autoFocus
               />
-              <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="category"
-              label="Category"
-              name="category"
-              autoFocus
-              />
+              <Select
+                labelId="category"
+                id="category"
+                value={category}
+                label="Category"
+                onChange={handleChange}
+                >
+                <MenuItem value={10}>Ten</MenuItem>
+                <MenuItem value={20}>Twenty</MenuItem>
+                <MenuItem value={30}>Thirty</MenuItem>
+
+              </Select>
+
               <Button
               type="submit"
               fullWidth
@@ -107,5 +163,5 @@ return (
 )
 };
 
-export default productForm;
+export default ProductForm;
 

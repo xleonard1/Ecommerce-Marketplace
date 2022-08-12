@@ -22,7 +22,10 @@
   },
   "homepage": "https://github.com/xleonard1/Ecommerce-Marketplace#readme",
   "devDependencies": {
-    
     "concurrently": "^5.1.0"
+  },
+  "dependencies": {
+    "@cloudinary/react": "^1.4.2",
+    "@cloudinary/url-gen": "^1.8.0"
   }
 }
