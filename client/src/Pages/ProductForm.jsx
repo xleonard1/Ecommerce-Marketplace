@@ -187,5 +187,6 @@ return (
 
 )
 };
+};
 
 export default ProductForm;
