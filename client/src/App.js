@@ -37,6 +37,21 @@ import {StoreProvider} from './utils/GlobalState'
 
 import './App.css';
 
+class App extends Component {
+  static propTypes = {
+    children: PropTypes.node
+  }
+  
+  render() {
+    const { children } = this.props
+    return (
+      <div>
+        {children}
+      </div>
+    )
+  }
+  }
+
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
@@ -59,6 +74,9 @@ const client = new ApolloClient({
 
 
 function App() {
+
+  const { children } = this.props
+
   return (
 
 <ApolloProvider client={client}>
@@ -125,7 +143,7 @@ function App() {
       element={<Contact />} 
       /> */}
       
-      <Route path="/contact" component={<Contact />}/>
+      <Route path="/contact" component={Contact}/>
       </Route> 
 
       <Route 
