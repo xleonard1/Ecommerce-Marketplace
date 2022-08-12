@@ -7,14 +7,26 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import careerImg from '../images/careers.png';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useQuery } from '@apollo/client';
+import { QUERY_USER } from '../utils/queries';
 
 
 const theme = createTheme();
 
-const careers = () => {
+
+const Careers = () => {
+    const {data} = useQuery(QUERY_USER);
+
+    console.log('Data', data)
+    let user;
+    if(data) {
+        user = data.user
+    }
+
     return (
         <ThemeProvider theme={theme}>
             <Container component="main" maxWidth="xs">
+             
                 <CssBaseline />
                 <Box
                   sx={{
@@ -24,11 +36,15 @@ const careers = () => {
                     alignItems: 'center',
                   }}
                 >
-                    
+                    {user ? (
+                        
+                         
                     <Grid container spacing={1}>
+                     
+                     
                         <Grid item xs={12}>
                             <Typography component="h1" variant="h2">
-                            Welcome Back, User Name 
+                            Welcome Back, {user.username}
                             </Typography>
                         </Grid>
                         <Grid item xs={12}>
@@ -49,10 +65,11 @@ const careers = () => {
                             </p>
                             <Box>
                             <Link href="/add-product" color='inherit'>Sell an Item</Link>
-                        </Box>
+                            </Box>
 
-                        </Grid>
+                        </Grid> 
                     </Grid>
+                    ) : null }
                 </Box>
 
             </Container>
@@ -61,4 +78,4 @@ const careers = () => {
     )
 };
 
-export default careers;
+export default Careers;
