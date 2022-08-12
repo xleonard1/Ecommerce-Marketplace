@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { component } from 'react';
 import { ApolloClient, InMemoryCache, ApolloProvider,createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -63,7 +63,7 @@ function App() {
 
 <ApolloProvider client={client}>
   <StoreProvider>
-  <Router>
+  <Router  history={hashHistory}>
     <div className="App flex-column justify-flex-start min-100-vh">
       <Header />
       <div className="container">
@@ -71,17 +71,15 @@ function App() {
         <Routes>
 
 
-{/*   --COMPONENTS-- */}
-      {/* <Price /> */}
-      {/* <Rating /> */}
-      {/* <Carousel /> */}
 
 {/* --MAIN CONTENT PAGE COMPONENTS-- */}
           {/* Define a default route that will render the Home component */}
-          <Route 
+          {/* <Route 
             path="/" 
             element={<Home />} 
-          />
+          /> */}
+          <Route path="/" component={App}>
+          <IndexRoute component={Home}/>
 
       {/* Define a route that will take in variable data */}
       {/* USE THIS ROUTE TO SHOW INDIVIDUAL PRODUCT BY ID */}
@@ -95,6 +93,10 @@ function App() {
       path="/product" 
       element={<Product />} 
       />
+        {/* <Route path="/" component={App}>
+    <IndexRoute component={AppSplash}/>
+    <Route path="demo" component={AppDemo}/>
+  </Route> */}
 
       <Route 
       path="/products" 
@@ -118,10 +120,13 @@ function App() {
       element={<Dashboard />} 
       />
 
-      <Route 
+      {/* <Route 
       path="/contact" 
       element={<Contact />} 
-      />
+      /> */}
+      
+      <Route path="/contact" component={Contact}/>
+      </Route> 
 
       <Route 
       path="/careers" 
