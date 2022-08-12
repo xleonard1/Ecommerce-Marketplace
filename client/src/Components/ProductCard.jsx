@@ -20,6 +20,7 @@ const classes = {
 
 const Root = styled('div')(({ theme }) => ({
   [`&.${classes.root}`]: {
+    
     maxWidth: '100%',
   },  
   [`.${classes.cardContent}`]: {
