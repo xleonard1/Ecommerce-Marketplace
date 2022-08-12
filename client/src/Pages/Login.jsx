@@ -12,6 +12,10 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useMutation } from "@apollo/client";
+import {useState} from 'react';
+import {LOGIN} from '../utils/mutations';
+import Auth from '../utils/auth';
 
 function Copyright(props) {
   return (
@@ -29,12 +33,27 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignIn() {
-  const handleSubmit = (event) => {
+  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [login, { error }] = useMutation(LOGIN)
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
+    try {
+      const mutationResponse = await login({
+        variables: { email: formState.email, password: formState.password },
+      });
+      const token = mutationResponse.data.login.token;
+      Auth.login(token);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormState({
+      ...formState,
+      [name]: value,
     });
   };
 
@@ -62,6 +81,7 @@ export default function SignIn() {
               required
               fullWidth
               id="email"
+              onChange={handleChange}
               label="Email Address"
               name="email"
               autoComplete="email"
@@ -75,6 +95,7 @@ export default function SignIn() {
               label="Password"
               type="password"
               id="password"
+              onChange={handleChange}
               autoComplete="current-password"
             />
             <FormControlLabel
