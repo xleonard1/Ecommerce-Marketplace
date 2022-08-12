@@ -14,7 +14,6 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useMutation } from '@apollo/client';
 import { LOGIN } from '../utils/mutations';
-import { useNavigate } from "react-router-dom";
 import Auth from '../utils/auth';
 import { useState } from 'react'
 
@@ -34,7 +33,6 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignIn() {
-  const navigate = useNavigate();
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error }] = useMutation(LOGIN);
 
@@ -46,7 +44,6 @@ export default function SignIn() {
       });
       const token = mutationResponse.data.login.token;
       Auth.login(token);
-      navigate('/Dashboard')
     
     } catch (e) {
       console.log(e);
