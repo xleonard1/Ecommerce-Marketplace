@@ -20,7 +20,6 @@ const classes = {
 
 const Root = styled('div')(({ theme }) => ({
   [`&.${classes.root}`]: {
-    
     maxWidth: '100%',
   },  
   [`.${classes.cardContent}`]: {
@@ -61,7 +60,14 @@ const ProductCard = ({ product }) => {
       //     >
             <Root className={classes.root}>
             <Card>
-                <CardMedia component='img' className={classes.media} image={product.image} title={product.name} />
+                <CardMedia 
+                  component='img' 
+                  className={classes.media}  
+                  title={product.name} 
+                  image={product.imageUrl?.length
+                  ? product.imageUrl
+                  : "https://placehold.jp/200x200.png)"}
+                  />
                 <CardContent className={classes.cardContent}>
                         <Typography variant="h6" gutterBottom>
                             {product.name}
