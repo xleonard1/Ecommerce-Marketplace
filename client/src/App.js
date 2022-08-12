@@ -116,10 +116,10 @@ function App() {
       element={<Dashboard />} 
       />
 
-      {/* <Route 
+      <Route 
       path="/contact" 
       element={<Contact />} 
-      /> */}
+      />
 
       <Route 
       path="/careers" 
