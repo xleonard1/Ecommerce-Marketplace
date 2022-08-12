@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { component } from 'react';
 import { ApolloClient, InMemoryCache, ApolloProvider,createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -37,6 +37,7 @@ import {StoreProvider} from './utils/GlobalState'
 
 import './App.css';
 
+
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
@@ -59,6 +60,7 @@ const client = new ApolloClient({
 
 
 function App() {
+
   return (
 
 <ApolloProvider client={client}>
@@ -71,10 +73,6 @@ function App() {
         <Routes>
 
 
-{/*   --COMPONENTS-- */}
-      {/* <Price /> */}
-      {/* <Rating /> */}
-      {/* <Carousel /> */}
 
 {/* --MAIN CONTENT PAGE COMPONENTS-- */}
           {/* Define a default route that will render the Home component */}
@@ -172,7 +170,6 @@ function App() {
       path="*" 
       element={<Oops404 />} 
       />
-
 
       </Routes>
     </div>

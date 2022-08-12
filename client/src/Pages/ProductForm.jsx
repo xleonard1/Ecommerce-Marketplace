@@ -5,13 +5,14 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useMutation } from '@apollo/client';
 import { ADD_PRODUCT } from '../utils/mutations';
 import Auth from '../utils/auth';
-import { useState } from 'react'
 
 import {AdvancedImage} from '@cloudinary/react';
 import {Cloudinary} from "@cloudinary/url-gen";
@@ -66,8 +67,8 @@ const ProductForm = (event) => {
     });
   };
 
-  const [image, setImage ] = useState("");
-  const [ url, setUrl ] = useState("");
+  const [image, setImage, url, setUrl ] = useState("");
+  // const [ url, setUrl ] = useState("");
   const uploadImage = () => {
   const data = new FormData()
   data.append("file", image)
@@ -160,11 +161,11 @@ return (
               <Select
                 labelId="category"
                 id="category"
-                value={category}
+                // value={category}
                 label="Category"
                 onChange={handleChange}
                 >
-                <MenuItem value={10}>Ten</MenuItem>
+                <MenuItem value={10}>Five</MenuItem>
                 <MenuItem value={20}>Twenty</MenuItem>
                 <MenuItem value={30}>Thirty</MenuItem>
 
@@ -187,6 +188,7 @@ return (
 </ThemeProvider>
 
 )
+};
 };
 
 export default ProductForm;
