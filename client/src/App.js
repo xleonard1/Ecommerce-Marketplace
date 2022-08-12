@@ -78,7 +78,7 @@ function App() {
             path="/" 
             element={<Home />} 
           /> */}
-          <Route path="/" component={Home}>
+          <Route path="/" component={<Home />}>
           {/* <IndexRoute component={Home}/> */}
 
       {/* Define a route that will take in variable data */}
@@ -125,7 +125,7 @@ function App() {
       element={<Contact />} 
       /> */}
       
-      <Route path="/contact" component={Contact}/>
+      <Route path="/contact" component={<Contact />}/>
       </Route> 
 
       <Route 
