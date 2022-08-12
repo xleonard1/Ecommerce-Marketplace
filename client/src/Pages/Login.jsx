@@ -12,10 +12,12 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useMutation } from "@apollo/client";
-import {useState} from 'react';
-import {LOGIN} from '../utils/mutations';
+
+import { useMutation } from '@apollo/client';
+import { LOGIN } from '../utils/mutations';
 import Auth from '../utils/auth';
+import { useState } from 'react'
+
 
 function Copyright(props) {
   return (
@@ -34,7 +36,9 @@ const theme = createTheme();
 
 export default function SignIn() {
   const [formState, setFormState] = useState({ email: '', password: '' });
-  const [login, { error }] = useMutation(LOGIN)
+
+  const [login, { error }] = useMutation(LOGIN);
+
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -44,6 +48,7 @@ export default function SignIn() {
       });
       const token = mutationResponse.data.login.token;
       Auth.login(token);
+
     } catch (e) {
       console.log(e);
     }
