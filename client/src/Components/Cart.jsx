@@ -160,7 +160,7 @@ const list = (anchor) => (
         sx={{ mr: 2, color: 'black' }}
         onClick={toggleDrawer("right", true)}
       >
-        <Badge badgeContent={1}>
+        <Badge badgeContent={state.cart.length}>
           <ShoppingCart />
         </Badge>
       </IconButton>
