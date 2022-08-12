@@ -1,7 +1,7 @@
 import React, { component } from 'react';
 import { ApolloClient, InMemoryCache, ApolloProvider,createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import { BrowserRouter as Router, Routes, Route, IndexRoute } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 // --Import Components--
 
@@ -78,8 +78,8 @@ function App() {
             path="/" 
             element={<Home />} 
           /> */}
-          <Route path="/" component={App}>
-          <IndexRoute component={Home}/>
+          <Route path="/" component={Home}>
+          {/* <IndexRoute component={Home}/> */}
 
       {/* Define a route that will take in variable data */}
       {/* USE THIS ROUTE TO SHOW INDIVIDUAL PRODUCT BY ID */}
