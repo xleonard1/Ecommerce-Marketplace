@@ -37,20 +37,6 @@ import {StoreProvider} from './utils/GlobalState'
 
 import './App.css';
 
-// class App extends Component {
-//   static propTypes = {
-//     children: PropTypes.node
-//   }
-  
-//   render() {
-//     const { children } = this.props
-//     return (
-//       <div>
-//         {children}
-//       </div>
-//     )
-//   }
-//   }
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -75,8 +61,6 @@ const client = new ApolloClient({
 
 function App() {
 
-  const { children } = this.props
-
   return (
 
 <ApolloProvider client={client}>
@@ -92,12 +76,10 @@ function App() {
 
 {/* --MAIN CONTENT PAGE COMPONENTS-- */}
           {/* Define a default route that will render the Home component */}
-          {/* <Route 
+          <Route 
             path="/" 
             element={<Home />} 
-          /> */}
-          <Route path="/" component={<Home />}>
-          {/* <IndexRoute component={Home}/> */}
+          />
 
       {/* Define a route that will take in variable data */}
       {/* USE THIS ROUTE TO SHOW INDIVIDUAL PRODUCT BY ID */}
@@ -111,10 +93,6 @@ function App() {
       path="/product" 
       element={<Product />} 
       />
-        {/* <Route path="/" component={App}>
-    <IndexRoute component={AppSplash}/>
-    <Route path="demo" component={AppDemo}/>
-  </Route> */}
 
       <Route 
       path="/products" 
@@ -142,9 +120,6 @@ function App() {
       path="/contact" 
       element={<Contact />} 
       /> */}
-      
-      <Route path="/contact" component={Contact}/>
-      </Route> 
 
       <Route 
       path="/careers" 
