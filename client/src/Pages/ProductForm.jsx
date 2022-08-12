@@ -8,6 +8,10 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useMutation } from '@apollo/client';
+import { ADD_PRODUCT } from '../utils/mutations';
+import Auth from '../utils/auth';
+import { useState } from 'react'
 
 import {AdvancedImage} from '@cloudinary/react';
 import {Cloudinary} from "@cloudinary/url-gen";
@@ -32,16 +36,33 @@ const theme = createTheme();
 
 // };
 
+
 const ProductForm = () => {
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      name: data.get('productName'),
-      price: data.get('productPrice'),
-      description: data.get('productDescription'),
-      category: data.get('category'),
+const ProductForm = (event) => {
+  const [formState, setFormState] = useState({ name: '', description: '', price: '', category: '' });
+  const [addproduct, { error }] = useMutation(ADD_PRODUCT);
+
+  const handleSubmit = async (event) => {
+  event.preventDefault();
+    try {
+      const mutationResponse = await addproduct({
+        variables: { name: formState.name, description: formState.description, price: formState.price, category: formState.category },
+      });
+      const token = mutationResponse.data.addproduct.token;
+      Auth.addproduct(token);
+    
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormState({
+      ...formState,
+      [name]: value,
     });
   };
 
@@ -62,7 +83,6 @@ const ProductForm = () => {
   })
   .catch(err => console.log(err))
   }
-
 
 return (
 
@@ -102,12 +122,15 @@ return (
 
               {/* **ADD handleSubmit**               onSubmit={}  */}
               <Box component="form" 
+              onSubmit={handleSubmit}
+
               noValidate sx={{ mt: 1 }}>
               <TextField
               margin="normal"
               required
               fullWidth
               id="productName"
+              onChange={handleChange}
               label="Product Name"
               name="product-name"
               autoFocus
@@ -120,12 +143,14 @@ return (
               label="Sale Price"
               // type="??" INSERT VALIDATION FOR DECIMAL NUMBER   
               id="productPrice"
+              onChange={handleChange}
               />
               <TextField
               margin="normal"
               required
               fullWidth
               id="productDescription"
+              onChange={handleChange}
               label="Product Description"
               name="product-description"
               variant="outlined"
@@ -144,6 +169,7 @@ return (
                 <MenuItem value={30}>Thirty</MenuItem>
 
               </Select>
+
 
               <Button
               type="submit"
@@ -164,4 +190,3 @@ return (
 };
 
 export default ProductForm;
-
