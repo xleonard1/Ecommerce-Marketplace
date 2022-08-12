@@ -60,13 +60,13 @@ const Cart = () => {
   //   dispatch({ type: TOGGLE_CART });
   // }
 
-  // function calculateTotal() {
-  //   let sum = 0;
-  //   state.cart.forEach((item) => {
-  //     sum += item.price * item.purchaseQuantity;
-  //   });
-  //   return sum.toFixed(2);
-  // }
+  function calculateTotal() {
+    let sum = 0;
+    state.cart.forEach((item) => {
+      sum += item.price * item.purchaseQuantity;
+    });
+    return sum.toFixed(2);
+     }
 
   // function submitCheckout() {
   //   const productIds = [];
@@ -117,13 +117,14 @@ const list = (anchor) => (
         return <CartItem product={item} key={index} />
       })}
        
+       
             <Box sx={{ mt: 2, display: 'flex', justifyContent: 'space-between', alignContent: 'baseline'}}>
                 <Typography>Free Shipping</Typography>
                 <Typography>$0</Typography>
             </Box>
             <Box sx={{ mt: 2, display: 'flex', justifyContent: 'space-between', alignContent: 'baseline'}}>
                 <Typography>Total</Typography>
-                <Typography>$29</Typography>
+                <Typography>${calculateTotal()}</Typography>
             </Box>
             <Box sx={{ mt: 2, display: 'flex', justifyContent: 'space-around', alignItems: 'center'}}>
                 <Button variant="outlined">Continue Shopping</Button>
