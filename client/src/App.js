@@ -37,20 +37,20 @@ import {StoreProvider} from './utils/GlobalState'
 
 import './App.css';
 
-class App extends Component {
-  static propTypes = {
-    children: PropTypes.node
-  }
+// class App extends Component {
+//   static propTypes = {
+//     children: PropTypes.node
+//   }
   
-  render() {
-    const { children } = this.props
-    return (
-      <div>
-        {children}
-      </div>
-    )
-  }
-  }
+//   render() {
+//     const { children } = this.props
+//     return (
+//       <div>
+//         {children}
+//       </div>
+//     )
+//   }
+//   }
 
 const httpLink = createHttpLink({
   uri: '/graphql',
