@@ -1,7 +1,7 @@
 import React, { component } from 'react';
 import { ApolloClient, InMemoryCache, ApolloProvider,createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, IndexRoute } from 'react-router-dom';
 
 // --Import Components--
 
@@ -63,7 +63,7 @@ function App() {
 
 <ApolloProvider client={client}>
   <StoreProvider>
-  <Router  history={hashHistory}>
+  <Router>
     <div className="App flex-column justify-flex-start min-100-vh">
       <Header />
       <div className="container">
