@@ -11,7 +11,6 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useMutation } from '@apollo/client';
 import { ADD_PRODUCT } from '../utils/mutations';
 import Auth from '../utils/auth';
-import { useState } from 'react'
 
 import {AdvancedImage} from '@cloudinary/react';
 import {Cloudinary} from "@cloudinary/url-gen";
@@ -66,8 +65,8 @@ const ProductForm = (event) => {
     });
   };
 
-  const [image, setImage ] = useState("");
-  const [ url, setUrl ] = useState("");
+  const [image, setImage, url, setUrl ] = useState("");
+  // const [ url, setUrl ] = useState("");
   const uploadImage = () => {
   const data = new FormData()
   data.append("file", image)
