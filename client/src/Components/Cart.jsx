@@ -107,6 +107,8 @@ const Cart = () => {
 
   //list on the menu drawer
 const list = (anchor) => (
+  <>
+  {state.cart.length ? (
     <Box
       sx={{ width: 400, ml: 2, mr: 2, mt: 2 }}
       role="presentation"
@@ -128,8 +130,24 @@ const list = (anchor) => (
             <Box sx={{ mt: 2, display: 'flex', justifyContent: 'space-around', alignItems: 'center'}}>
                 <Button variant="outlined">Continue Shopping</Button>
                 <Button variant="outlined">Proceed To Checkout</Button>
-            </Box>
+            </Box> 
     </Box>
+    ) : (
+      <Box
+      sx={{ width: 400, ml: 2, mr: 2, mt: 2 }}
+      role="presentation"
+      onClick={toggleDrawer(anchor, false)}
+      onKeyDown={toggleDrawer(anchor, false)}
+    >
+      <h3>
+          <span role="img" aria-label="shocked">
+            😱
+          </span>
+          You haven't added anything to your cart yet!
+      </h3>
+    </Box>
+    )}
+    </>
   );
 
   return (
@@ -142,7 +160,7 @@ const list = (anchor) => (
         sx={{ mr: 2, color: 'black' }}
         onClick={toggleDrawer("right", true)}
       >
-        <Badge badgeContent={1}>
+        <Badge badgeContent={state.cart.length}>
           <ShoppingCart />
         </Badge>
       </IconButton>
