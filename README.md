@@ -17,21 +17,22 @@ A functional and highly immersive application allowing users to buy and sell pro
 - [User Story](#user-story)
 - [Acceptance Criteria](#acceptance-criteria)
 - [Future Development](#future-development)
+- [Contributors](#contributors)
 - [License](#license)
 
 # Links
 
 [GitHub Repository](https://github.com/xleonard1/Ecommerce-Marketplace)
 
-[Deployed Application](https://example.com)
+[Deployed Application](https://boiling-oasis-17653.herokuapp.com/)
 
 
 
 # Screenshots
 
-![Screenshot of Ecommerce Marketplace:](./public/images/EcommerceMarketplace1.jpg)
+![Screenshot of Ecommerce Marketplace:](./client/public/images/Screenshot-1.png)
 
-![Screenshot  of Ecommerce Marketplace2:](./public/images/EcommerceMarketplace2.jpg)
+
 
 
 
@@ -72,6 +73,17 @@ The following acceptance criteria were met for the project:
 - [x] Have a high-quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
 
 # Future Development
+
+We want our website to have omnichannel presence and support,making it a bigger platform to launch the business merchandise.
+
+# Contributors
+
+Xavier Leonard
+Bhavna Jain
+Michael Schenk
+Sherreka Burton
+
+
 
 
 
